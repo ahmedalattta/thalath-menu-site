@@ -801,11 +801,6 @@ window.MENU={
 "en": "TOAST SANDWICH"
 },
 {
-"nm": "ساندويتش حلومي",
-"p": 10,
-"en": "HALLOUMI SANDWICH"
-},
-{
 "nm": "ساندويتش شيدر",
 "p": 10,
 "en": "CHEDDAR SANDWICH"
@@ -839,6 +834,11 @@ window.MENU={
 "nm": "ساندويتش دجاج",
 "p": 12,
 "en": "CHICKEN SANDWICH"
+},
+{
+"nm": "ساندويتش حلومي",
+"p": 10,
+"en": "HALLOUMI SANDWICH"
 }
 ]
 }
