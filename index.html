@@ -495,7 +495,7 @@ function has3D(it){return !!MODELS[key(it)]&&!picOf(it)}
 const IXT={specials:{p:'drinks/caramelChapter',c:'#a86c38',w:1},hot:{m:'latte',c:'#7a4a2e'},iced:{p:'drinks/icedLatte',c:'#9c7458'},signature:{p:'drinks/caramelChapter',c:'#b0743d'},
  matcha:{p:'drinks/matchaStrawberry',c:'#5f7f45'},tea:{p:'drinks/teaBlack',c:'#7a2e1a'},mojito:{p:'drinks/mojitoStrawberry',c:'#a8475a'},protein:{p:'drinks/shakeStrawberry',c:'#b5727e'},
  milk:{p:'food/syrupCaramel',c:'#a8917a'},cakes:{p:'food/honeyCake',c:'#a8744e'},sweets:{p:'food/chipCookie',c:'#8a5a3c'},more:{p:'food/proteinBar1',c:'#7d6a58'},sandwiches:{p:'food/toast',c:'#9a7a52'},events:{c:'#3d5248',w:1}};
-function ixTile(s,i,attr,extra=''){const t=IXT[s.id]||{};const pic=t.p?`<img src="assets/${t.p}.webp?v=29" alt="" loading="lazy" class="${t.p.startsWith('food/')?'fd':''}">`:t.m?`<img data-still="${t.m}" alt="">`:'<span class="mk"></span>';
+function ixTile(s,i,attr,extra=''){const t=IXT[s.id]||{};const pic=t.p?`<img src="assets/${t.p}.webp?v=30" alt="" loading="lazy" class="${t.p.startsWith('food/')?'fd':''}">`:t.m?`<img data-still="${t.m}" alt="">`:'<span class="mk"></span>';
   return `<a ${attr}="${i+1}" class="${t.w&&!extra?'w':''} ${extra}" style="--i:${i};--c:${t.c||'#8a5a3c'}"><span class="tx"><span class="tt">${esc(s.title)}</span><span class="ee en">${esc(s.en)}</span></span><span class="im">${pic}</span></a>`}
 async function ixStills(root){const ims=[...root.querySelectorAll('img[data-still]')];if(!ims.length)return;try{const m=await getM3D();for(const im of ims){const k=im.dataset.still;SNAP['ix'+k]=SNAP['ix'+k]||m.still(k,{w:360,h:440,phi:PHI(k)});im.src=await SNAP['ix'+k];im.removeAttribute('data-still')}}catch(e){console.error(e)}}
 function picOf(it){const k=key(it);if(PIC[k])return PIC[k];const md=MODELS[k];return md&&PHOTO[md.m]?'drinks/'+PHOTO[md.m]:null}
@@ -876,7 +876,7 @@ function czLayout(pg,pos,dragging){const c=pg.cz;c.pos=pos;const W=c.st.clientWi
     f.style.opacity=(a<.5&&c.view&&c.liveOn)?0:(1-Math.min(a,2)*.3).toFixed(2)});
   if(dragging&&c.view){c.view.hide();c.liveOn=false;c.figs.forEach((f,i)=>{if(Math.abs(i-pos)<.5)f.style.opacity=1})}}
 async function czSnap(pg,i){const c=pg.cz,it=c.its[i],md=MODELS[key(it)],f=c.figs[i],img=f.querySelector('img');if(img.src||f.classList.contains('fb'))return;const pic=picOf(it);
-  if(pic){img.classList.add('ph');if(pic.startsWith('food/'))img.classList.add('food');img.onload=()=>{img.classList.add('ok');const l=f.querySelector('.ld');if(l)l.remove()};img.src='assets/'+pic+'.webp?v=29';return}
+  if(pic){img.classList.add('ph');if(pic.startsWith('food/'))img.classList.add('food');img.onload=()=>{img.classList.add('ok');const l=f.querySelector('.ld');if(l)l.remove()};img.src='assets/'+pic+'.webp?v=30';return}
   if(!md){f.classList.add('fb');const l=f.querySelector('.ld');if(l)l.remove();return}const k=md.m;
   try{const m=await getM3D();SNAP[k]=SNAP[k]||m.still(k,{w:520,h:680,phi:PHI(k)});const url=await SNAP[k];img.onload=()=>{img.classList.add('ok');const l=f.querySelector('.ld');if(l)l.remove()};img.src=url}catch(e){console.error(e)}}
 async function czPreload(pg){const c=pg.cz;const order=[...c.its.keys()].sort((a,b)=>Math.abs(a-c.act)-Math.abs(b-c.act));for(const i of order)await czSnap(pg,i)}
