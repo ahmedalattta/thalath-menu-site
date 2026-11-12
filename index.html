@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ثلاث — قائمة المأكولات والمشروبات</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+<style>
+:root{--vine-mask:url(data:image/png;base64,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);--logo-mask:url(data:image/png;base64,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);
+  --ink:#3b1f15; --paper:#dcd8d8; --sage:#becbb7; --sage2:#acb6a7; --terra:#d6614b; --terra2:#a63f2d; --brown:#633d2c;
+  --line:rgba(59,31,21,.18);
+  --f:'IBM Plex Sans Arabic',system-ui,sans-serif;
+  --st:env(safe-area-inset-top,0px); --sb:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden;overflow:clip;background:#24130d;color:var(--ink);font-family:var(--f)}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.app{position:fixed;inset:0;max-width:520px;margin:0 auto;overflow:hidden;overflow:clip;background:var(--paper)}
+.en{direction:ltr;unicode-bidi:isolate}
+.logo{display:inline-block;background:currentColor;aspect-ratio:664/223;
+  -webkit-mask:var(--logo-mask) center/contain no-repeat;mask:var(--logo-mask) center/contain no-repeat}
+.vine{display:block;background:currentColor;aspect-ratio:492/50;
+  -webkit-mask:var(--vine-mask) center/contain no-repeat;mask:var(--vine-mask) center/contain no-repeat}
+
+/* ---------- book ---------- */
+.book{position:absolute;inset:0;perspective:1800px}
+.page{position:absolute;inset:0;overflow:hidden;background:var(--paper);transform-origin:right center;backface-visibility:hidden;visibility:hidden;will-change:transform}
+.page.dark{background:var(--ink);color:var(--paper)}
+.page.on{visibility:visible;z-index:2}
+.page.under{visibility:visible;z-index:1}
+.page .scroll{position:absolute;inset:0;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:calc(18px + var(--st)) 22px calc(96px + var(--sb))}
+.page::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;background:linear-gradient(to left,rgba(0,0,0,0),rgba(0,0,0,.22))}
+.page.flip-out{animation:flipOut .75s cubic-bezier(.45,.05,.3,1) forwards;z-index:3;visibility:visible}
+.page.flip-out::after{animation:shade .75s forwards}
+.page.flip-in{animation:flipIn .75s cubic-bezier(.45,.05,.3,1) forwards;z-index:3;visibility:visible}
+.page.flip-in::after{animation:shade .75s reverse forwards}
+@keyframes flipOut{to{transform:rotateY(178deg)}}
+@keyframes flipIn{from{transform:rotateY(178deg)}to{transform:rotateY(0)}}
+@keyframes shade{60%{opacity:1}100%{opacity:.5}}
+
+/* page header (as in the artboards) */
+.ph{display:flex;justify-content:space-between;align-items:flex-start;min-height:34px}
+.ph .brand{display:flex;flex-direction:column;align-items:flex-start;gap:3px}
+.ph .brand .logo{width:46px}
+.ph .brand small{font-size:10px;font-weight:500}
+.ph .brand b{font-size:17px;font-weight:500}
+.ph .tag{font-size:11px;font-weight:500}
+.hero{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:6px}
+.hero .t{flex:1;min-width:0}
+.hero h2{font-size:42px;line-height:1.15;font-weight:500}
+.hero h2.bold{font-weight:700}
+.hero h2.long{font-size:31px}
+.hero .sub{font-size:15px;font-weight:500;color:var(--terra);letter-spacing:.02em;margin-top:2px}
+.hero .sub.ink{color:var(--ink);font-weight:700;font-size:13px;letter-spacing:.04em}
+.pill{display:inline-block;margin-top:8px;background:var(--ink);color:var(--paper);font-size:10px;font-weight:500;padding:3px 12px;border-radius:999px}
+.pic{position:relative;width:118px;height:118px;flex:none}
+.pic::before{content:"";position:absolute;inset:8px 4px 4px 8px;border-radius:50%;background:var(--sage)}
+.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 6px 8px rgba(59,31,21,.18))}
+.pic i{position:absolute;width:7px;height:7px;border-radius:50%;background:var(--terra)}
+.pic i:nth-of-type(1){top:4px;right:16px}.pic i:nth-of-type(2){bottom:20px;left:0;width:9px;height:9px}
+.rule{height:2px;background:var(--ink);margin:16px 0 4px}
+
+.items{list-style:none}
+.item{padding:11px 0 10px;border-bottom:1px solid var(--line);cursor:pointer;opacity:0;transform:translateY(6px)}
+.page.revealed .item{animation:rise .45s forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+.item .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.item .nm{font-size:18px;font-weight:500;line-height:1.3}
+.item .new{display:inline-block;font-size:10px;background:var(--terra);color:var(--paper);padding:0 8px;border-radius:999px;margin-inline-start:6px;vertical-align:3px;line-height:1.7}
+.item .pr{font-size:18px;font-weight:500;white-space:nowrap;direction:ltr}
+.item .pr sup,.cur{font-size:9px;color:var(--terra);font-weight:500;margin-left:2px;vertical-align:6px}
+.item .pr.b{font-weight:700;font-size:15px}
+.item .pr.b span{font-size:15px}
+.item .e2{display:block;font-size:9.5px;font-weight:500;letter-spacing:.04em;margin-top:1px;text-align:right}
+.item .nut{display:block;font-size:9.5px;margin-top:3px;text-align:right;white-space:pre;opacity:.85}
+.item .d{font-size:13px;margin-top:5px;line-height:1.6}
+.item .d-en{display:block;font-size:10px;opacity:.8;text-align:right}
+.item .note{font-size:12.5px;font-weight:500;margin-top:4px}
+.item.with-img{display:flex;gap:12px;align-items:center}
+.item.with-img .body{flex:1;min-width:0}
+.item.with-img .thumb{width:84px;flex:none;text-align:center}
+.item.with-img .thumb img{width:84px;height:84px;object-fit:contain}
+.item.with-img .thumb .pr{display:block;font-weight:700;font-size:20px;margin-top:2px}
+.item .e2.terra{color:var(--terra)}
+.grp-h{display:flex;align-items:baseline;justify-content:space-between;margin:22px 0 2px}
+.grp-h b{font-size:21px;font-weight:700}
+.grp-h span{font-size:11px;font-weight:500;color:var(--terra2)}
+.intro{margin-top:14px;font-size:14px;font-weight:500}
+.intro small{display:block;font-size:9.5px;letter-spacing:.04em;margin-top:2px}
+.banner{margin-top:18px;background:var(--ink);color:var(--paper);border-radius:14px;padding:12px;text-align:center;font-size:13px;font-weight:500;white-space:pre}
+.banner small{display:block;color:var(--sage);font-size:8.5px;letter-spacing:.06em;margin-top:3px}
+.notes{display:flex;justify-content:space-between;gap:10px;margin-top:22px;padding-top:10px;border-top:1px solid var(--ink);font-size:9.5px;font-weight:500}
+.notes span:last-child{white-space:pre}
+.handle{text-align:center;font-size:10px;font-weight:500;margin-top:14px;opacity:.8}
+
+/* specials */
+.feature{margin-top:24px;background:var(--ink);border-radius:4px;padding:26px 22px 30px;color:var(--paper);cursor:pointer;min-height:270px;display:flex;flex-direction:column}
+.feature .l{color:var(--sage);font-size:18px;font-weight:500}
+.feature .n{font-size:34px;font-weight:500;margin-top:22px}
+.feature .p{color:var(--sage);font-size:30px;font-weight:500;margin-top:auto;padding-top:30px}
+.feature .p small{font-size:16px}
+
+/* index */
+.idx-h{font-size:40px;font-weight:500;margin-top:10px}
+.idx-h small{display:block;color:var(--terra);font-size:13px;letter-spacing:.06em}
+.idx a{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.idx .no{font-size:12px;font-weight:500;color:var(--terra);width:22px}
+.idx .tt{font-size:19px;font-weight:500;flex:1}
+.idx .ee{font-size:9.5px;font-weight:500;letter-spacing:.04em;opacity:.75}
+
+/* events */
+.month{font-size:22px;font-weight:500;margin-top:4px}
+.ev{padding:12px 14px;margin-top:8px}
+.ev:nth-child(odd){background:var(--sage)}
+.ev h4{font-size:21px;font-weight:500;line-height:1.3}
+.ev p{font-size:13px;font-weight:500}
+.ev-foot{display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-size:13px;font-weight:500}
+.ev-foot .en{font-size:11px}
+
+/* ---------- product strip v2: floating card, product overlapping it (closer to the reference video) ---------- */
+.page.sbp{background:var(--sbc,#8a5a3c);transition:background-color .6s ease}
+.page.sbp .scroll{padding:0;overflow:hidden}
+.sb{position:absolute;inset:0;color:#fff;display:flex;flex-direction:column}
+.sb-top{flex:none;padding-top:calc(14px + var(--st));display:flex;flex-direction:column;align-items:center;z-index:4}
+.sb-badge{width:58px;height:58px;border-radius:16px;background:rgba(0,0,0,.18);display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+.sb-badge .logo{width:40px;color:#fff}
+.sb-top small{font-size:10px;letter-spacing:.28em;opacity:.9;margin-top:9px}
+.cz{position:relative;flex:1;min-height:0;margin:34px 0 -20px;z-index:3;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.sb-it{position:absolute;left:50%;top:50%;width:60%;height:100%;transform:translate(-50%,-50%);will-change:transform,opacity,filter;pointer-events:none}
+.sb-it img{width:100%;height:100%;object-fit:contain;object-position:50% 100%;display:block;opacity:0;transition:opacity .35s ease}
+.sb-it img.ok{opacity:1}
+.sb-it img.ph.food{left:-4%;width:108%;height:56%;bottom:9%;object-position:50% 100%}
+.sb-it.fb::after{content:'';position:absolute;left:50%;top:52%;width:46%;aspect-ratio:2.4;transform:translate(-50%,-50%);background:rgba(255,255,255,.28);-webkit-mask:var(--logo-mask) center/contain no-repeat;mask:var(--logo-mask) center/contain no-repeat}
+.sb-it img.ph{position:absolute;left:0;bottom:3%;height:84%;filter:drop-shadow(0 16px 14px rgba(0,0,0,.3))}
+.sb-it .ld{position:absolute;left:50%;top:55%;width:34px;height:34px;margin:-17px;border-radius:50%;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sb-live{position:absolute;left:50%;top:50%;width:62%;height:100%;transform:translate(-50%,-50%);opacity:0;z-index:2;pointer-events:none;filter:drop-shadow(0 18px 18px rgba(0,0,0,.22))}
+.sb-card{position:relative;flex:none;margin:0 11% calc(80px + var(--sb));z-index:2;background:#fff;color:var(--ink);border-radius:24px;padding:16px 18px 16px;
+  box-shadow:0 20px 40px rgba(0,0,0,.16);transition:transform .5s cubic-bezier(.22,.8,.26,1)}
+.sb-card.bump{transform:translateY(10px)}
+.sb-head{display:flex;justify-content:space-between;align-items:center}
+.sb-p{font-size:20px;font-weight:600;line-height:1}.sb-p small{font-size:11px;color:var(--terra);margin-inline-start:3px;vertical-align:8px}
+.sb-size{font-size:10px;padding:4px 10px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line);opacity:.7}
+.sb-n{font-size:17px;font-weight:600;line-height:1.3;margin-top:6px}
+.sb-e{font-size:10px;letter-spacing:.24em;color:var(--terra);margin-top:2px;text-align:right}
+.sb-d{font-size:11.5px;line-height:1.6;margin-top:5px;opacity:.7}
+.sb-de{font-size:10px;line-height:1.5;margin-top:3px;opacity:.5;direction:ltr;text-align:right}
+.sb-meta{font-size:9px;opacity:.4;margin-top:4px}
+.sb-get{display:flex;justify-content:center;margin-top:10px}
+.sb-get button{font:inherit;border:0;border-radius:999px;padding:8px 0;font-size:13px;cursor:pointer}
+.sb-get .add{width:72%;background:#1f1410;color:#fff}
+.sb-get .v3{width:64px;background:#fff;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.sb-dots{display:none!important;position:absolute;left:0;right:0;bottom:calc(60px + var(--sb));display:flex;justify-content:center;gap:5px;z-index:2}
+.sb-dots i{width:6px;height:6px;border-radius:3px;background:rgba(255,255,255,.4);transition:width .3s,background .3s}
+.sb-dots i.on{width:18px;background:#fff}
+.sb-txt{animation:czIn .45s cubic-bezier(.2,.7,.2,1)}
+@keyframes czIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+/* index page — centered */
+.ix-page{text-align:center}
+.ix-top{display:flex;justify-content:center;padding-top:2px}
+.ix-top .logo{width:58px}
+.ix-h{font-size:44px;font-weight:500;line-height:1.1;margin-top:18px}
+.ix-h small{display:block;color:var(--terra);font-size:11px;letter-spacing:.32em;margin-top:8px}
+.ix{display:flex;flex-direction:column;align-items:center;margin:26px 0 10px}
+.ix a{display:flex;flex-direction:column;align-items:center;padding:12px 30px;cursor:pointer;-webkit-tap-highlight-color:transparent;
+  transition:transform .25s ease,color .25s ease}
+.ix a:active{transform:scale(.96);color:var(--terra)}
+.ix .no{font-size:10px;font-weight:500;color:var(--terra);letter-spacing:.1em;opacity:.85}
+.ix .tt{font-size:25px;font-weight:500;line-height:1.3;margin-top:2px}
+.ix .ee{font-size:9.5px;font-weight:500;letter-spacing:.26em;opacity:.6;margin-top:3px}
+.ix a+a::before{content:"";display:block;width:5px;height:5px;transform:rotate(45deg);background:var(--sage);margin:0 auto 16px}
+.ix a+a{padding-top:4px}
+.on .ix a,.on .ix-h{animation:ixIn .7s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 55ms + 120ms)}
+.on .ix-h{animation-delay:0s}
+@keyframes ixIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.ixg{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:22px 16px 6px;text-align:start}
+.ixg a{position:relative;display:flex;flex-direction:column;border-radius:24px;background:#fff;padding:7px;color:var(--ink,#2a1a12);cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .2s;box-shadow:0 6px 18px rgba(60,40,30,.08),0 1px 2px rgba(60,40,30,.06)}
+.ixg a:active{transform:scale(.97)}
+.ixg .im{order:1;position:relative;display:flex;align-items:flex-end;justify-content:center;aspect-ratio:1/1;border-radius:18px;background:color-mix(in srgb,var(--c) 42%,#f4f1ec);overflow:hidden;padding:10px 10px 0}
+.ixg a.w{grid-column:1/-1}
+.ixg a.w .im{aspect-ratio:2.2/1}
+.ixg .im img{max-height:100%;max-width:88%;object-fit:contain;object-position:50% 100%;filter:drop-shadow(0 10px 9px rgba(0,0,0,.18))}
+.ixg .im img.fd{max-width:100%;margin-bottom:12%}
+.ixg .mk{width:46%;aspect-ratio:2.4;margin-bottom:34%;background:color-mix(in srgb,var(--c) 55%,#fff);-webkit-mask:var(--logo-mask) center/contain no-repeat;mask:var(--logo-mask) center/contain no-repeat}
+.ixg .tx{order:2;display:flex;flex-direction:column;padding:9px 6px 5px}
+.ixg .tt{font-size:15px;font-weight:600;line-height:1.25}
+.ixg .ee{font-size:8px;font-weight:500;letter-spacing:.18em;color:var(--terra);margin-top:3px;text-align:right}
+.on .ixg a{animation:ixIn .6s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 45ms + 100ms)}
+.ixg.ixs{grid-template-columns:repeat(3,1fr);gap:8px;padding:6px 14px 18px;max-height:68vh;overflow:auto}
+.ixg.ixs a{border-radius:18px;padding:5px;box-shadow:0 3px 10px rgba(60,40,30,.08)}
+.ixg.ixs .im{border-radius:14px;padding:6px 6px 0}
+.ixg.ixs .tx{padding:6px 4px 3px}.ixg.ixs .tt{font-size:11.5px}.ixg.ixs .ee{font-size:6px;letter-spacing:.12em;margin-top:2px}
+.ixg.ixs a.cur{box-shadow:0 0 0 2px var(--terra)}
+.ix-end{font-size:11px;font-weight:500;opacity:.6;padding:10px 0 6px}
+/* cover */
+.cover-wrap{position:absolute;inset:0;z-index:60;overflow:hidden;background:#140c09}
+.cover{position:absolute;inset:0;color:var(--paper);overflow:hidden;transition:opacity .9s ease,transform 1.1s cubic-bezier(.6,.05,.25,1)}
+.cover.open{opacity:0;transform:scale(1.08);pointer-events:none}
+.pano{position:absolute;left:50%;top:50%;height:116%;width:auto;max-width:none;will-change:transform;
+  transform:translate(-50%,-50%);animation:panoIn 2.2s cubic-bezier(.2,.7,.2,1) both;user-select:none;-webkit-user-drag:none}
+@keyframes panoIn{from{filter:brightness(.4) saturate(.7)}to{filter:none}}
+.cover .shade{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to top,rgba(31,20,16,.97) 0%,rgba(31,20,16,.9) 22%,rgba(31,20,16,.55) 34%,rgba(31,20,16,0) 52%),
+             linear-gradient(to bottom,rgba(31,20,16,.55) 0%,rgba(31,20,16,0) 16%)}
+.cover .top{position:absolute;top:calc(22px + var(--st));left:0;right:0;display:flex;flex-direction:column;align-items:center;pointer-events:none}
+.cover .logo{width:96px;color:var(--paper)}
+.cover .tag{color:var(--sage);font-size:12px;font-weight:500;margin-top:5px}
+.cover .bottom{position:absolute;left:0;right:0;bottom:0;padding:0 26px calc(22px + var(--sb));text-align:center;
+  display:flex;flex-direction:column;align-items:center;animation:rise 1.2s .5s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.cover h1{font-size:42px;line-height:1.25;font-weight:500}
+.cover .fd{color:var(--sage);font-size:16px;font-weight:500;margin-top:8px;letter-spacing:.04em}
+.cover .sub{font-size:12px;font-weight:500;margin-top:10px;opacity:.9}
+.cover .enter{margin-top:20px;background:var(--paper);color:var(--ink);border:0;font:inherit;font-size:15px;font-weight:500;border-radius:999px;padding:12px 46px;cursor:pointer}
+.cover .web{margin-top:12px;font-size:11px;opacity:.7}
+@keyframes blink{50%{opacity:.3}}
+
+/* closing */
+.close .scroll{display:flex;flex-direction:column;align-items:center;text-align:center}
+.close .logo{width:120px;color:var(--paper);margin-top:26px}
+.close .vine{width:96px;color:var(--sage);margin-top:6px}
+.close h2{font-size:34px;line-height:1.25;font-weight:500;margin-top:30px;direction:ltr}
+.close h2 span{color:var(--sage)}
+.feats{display:flex;justify-content:center;gap:26px;margin-top:34px}
+.feats div{display:flex;flex-direction:column;align-items:center;font-size:12px;font-weight:500}
+.feats svg{width:36px;height:36px;stroke:var(--paper);fill:none;stroke-width:1.5;margin-bottom:8px}
+.feats small{color:var(--sage);font-size:7.5px;letter-spacing:.04em;margin-top:2px}
+.close .hr{width:100%;height:1px;background:rgba(220,216,216,.35);margin:30px 0 22px}
+.close .al{font-size:13px;font-weight:500}
+.close .al small{display:block;color:var(--sage);font-size:8px;letter-spacing:.04em;margin-top:4px}
+.close .web{margin-top:30px;background:var(--paper);color:var(--ink);font-size:12px;font-weight:500;border-radius:999px;padding:8px 44px;text-decoration:none}
+
+/* ---------- bottom bar ---------- */
+.bar{position:absolute;bottom:0;inset-inline:0;z-index:40;display:flex;align-items:center;gap:8px;padding:10px 12px calc(12px + var(--sb));
+  background:linear-gradient(to top,var(--paper) 62%,rgba(220,216,216,0));transition:background .3s}
+.bar.on-dark{background:linear-gradient(to top,var(--ink) 62%,rgba(59,31,21,0));color:var(--paper)}
+.nb{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;flex:none}
+.bar.on-dark .nb{border-color:rgba(220,216,216,.3)}
+.nb svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:2}
+.nb:disabled{opacity:.3}
+.lbl{flex:1;cursor:pointer;text-align:center;font-size:11px;font-weight:500;line-height:1.3;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.lbl b{display:block;font-size:14px}
+.lbl b::after{content:'';display:inline-block;width:6px;height:6px;border-left:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(135deg);margin-right:6px;vertical-align:3px}
+.cart-btn{position:relative;height:42px;padding:0 16px;border-radius:999px;background:var(--terra);color:var(--paper);font-size:13px;font-weight:500;flex:none}
+.badge{position:absolute;top:-5px;left:-4px;min-width:19px;height:19px;border-radius:10px;background:var(--ink);color:var(--paper);font-size:10.5px;display:grid;place-items:center;padding:0 5px;transform:scale(0);transition:transform .25s}
+.bar.on-dark .badge{background:var(--paper);color:var(--ink)}
+.badge.show{transform:scale(1)}
+.badge.bump{animation:bump .35s}
+@keyframes bump{50%{transform:scale(1.35)}}
+
+/* ---------- sheets ---------- */
+.scrim{position:absolute;inset:0;background:rgba(36,19,13,.5);z-index:79;opacity:0;pointer-events:none;transition:opacity .3s}
+.scrim.show{opacity:1;pointer-events:auto}
+.sheet{position:absolute;inset-inline:0;bottom:0;z-index:80;background:var(--paper);border-radius:22px 22px 0 0;padding:24px 22px calc(22px + var(--sb));
+  transform:translateY(105%);transition:transform .4s cubic-bezier(.3,1.15,.4,1);max-height:88%;overflow-y:auto}
+.sheet.show{transform:none}
+.grab{width:40px;height:4px;border-radius:2px;background:var(--line);margin:-10px auto 16px}
+.s-sec{font-size:11px;font-weight:500;color:var(--terra)}
+.s-top{display:flex;gap:14px;align-items:center}
+.s-top img{width:96px;height:96px;object-fit:contain;flex:none}
+.s-nm{font-size:30px;font-weight:500;line-height:1.25;margin-top:2px}
+.s-en{font-size:11px;font-weight:500;letter-spacing:.04em;text-align:right}
+.s-d{font-size:14px;margin-top:12px;line-height:1.7}
+.s-d small{display:block;font-size:11px;opacity:.75}
+.og{margin-top:14px}.og .ot{font-size:12px;font-weight:600;opacity:.6;margin-bottom:7px}
+.ops{display:flex;flex-wrap:wrap;gap:7px}
+.op{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(59,31,21,.18);background:#fff;color:var(--ink);border-radius:999px;padding:7px 12px;font:inherit;font-size:12.5px;cursor:pointer}
+.op b{font-size:10px;font-weight:600;color:var(--terra)}
+.op.on{background:var(--ink);color:#fff;border-color:var(--ink)}.op.on b{color:#f3c9bd}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;direction:ltr;justify-content:flex-end}
+.chips span{font-size:11px;font-weight:500;background:var(--sage);padding:4px 10px;border-radius:999px}
+.s-row{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.s-pr{font-size:30px;font-weight:700;direction:ltr}
+.btn{height:48px;border-radius:12px;background:var(--ink);color:var(--paper);font-size:15px;font-weight:500;padding:0 22px}
+.btn.terra{background:var(--terra)}
+.btn.full{width:100%}
+.c-h{font-size:28px;font-weight:500}
+.c-row{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid var(--line)}
+.c-row .n{flex:1;font-size:15px;font-weight:500;min-width:0}
+.c-row .n small{display:block;font-size:9.5px;opacity:.7}
+.c-row .q{display:flex;align-items:center;gap:8px}
+.c-row .q button{width:28px;height:28px;border-radius:50%;border:1px solid var(--ink);font-size:15px;line-height:1;display:grid;place-items:center}
+.c-row .p{width:56px;text-align:left;font-weight:700;direction:ltr}
+.c-total{display:flex;justify-content:space-between;font-size:22px;font-weight:700;margin-top:14px}
+.c-note{font-size:12px;text-align:center;margin-top:12px;opacity:.75}
+.empty{text-align:center;padding:26px 0 10px;font-size:14px;line-height:1.8}
+
+/* search */
+.search{position:absolute;inset:0;z-index:75;background:var(--paper);transform:translateY(100%);transition:transform .4s cubic-bezier(.3,1,.4,1);display:flex;flex-direction:column}
+.search.show{transform:none}
+.search .sh{display:flex;gap:10px;align-items:center;padding:calc(14px + var(--st)) 16px 10px;border-bottom:1px solid var(--line)}
+.search input{flex:1;height:44px;border-radius:12px;border:1px solid var(--line);background:#e6e3e3;padding:0 14px;font:inherit;font-size:15px;color:var(--ink);outline:none}
+.search .x{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center}
+.search .x svg{width:17px;height:17px;stroke:currentColor;stroke-width:2;fill:none}
+.search .sl{flex:1;overflow-y:auto;padding:0 16px calc(24px + var(--sb))}
+.search .g{font-size:15px;font-weight:700;color:var(--terra);margin:16px 0 2px}
+.search .r{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px;font-weight:500;cursor:pointer}
+.search .r .p{margin-inline-start:auto;direction:ltr;font-weight:700}
+.search .r .a{width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:17px;line-height:1;flex:none}
+.toast{position:absolute;left:50%;bottom:calc(80px + var(--sb));z-index:90;transform:translate(-50%,16px);opacity:0;background:var(--ink);color:var(--paper);font-size:12.5px;padding:9px 16px;border-radius:999px;transition:all .3s;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* 3D */
+.b3d{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.04em;border:1px solid var(--ink);border-radius:999px;padding:0 6px;margin-inline-start:6px;vertical-align:3px;line-height:1.6;direction:ltr}
+.pic.photo::before{display:none}.pic.photo img{border-radius:50%;object-fit:cover;top:8px;left:8px;right:auto;bottom:auto;width:106px;height:106px;filter:none}
+.feature .ph2{display:flex;justify-content:space-between;align-items:flex-end;margin-top:auto;padding-top:22px}
+.feature .ph2 img{width:120px;height:120px;object-fit:cover;border-radius:10px}
+.feature .ph2 .p{margin:0;padding:0}
+.s-top img.photo{border-radius:12px;object-fit:cover}
+.btn.line{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.s-acts{display:flex;gap:8px}
+.viewer{position:absolute;inset:0;z-index:85;background:radial-gradient(120% 70% at 50% 42%,#e9e6e6 0%,#dcd8d8 60%,#cfcaca 100%);opacity:0;pointer-events:none;transition:opacity .35s;display:flex;flex-direction:column}
+.viewer.show{opacity:1;pointer-events:auto}
+.viewer .vh{display:flex;justify-content:space-between;align-items:flex-start;padding:calc(16px + var(--st)) 18px 0}
+.viewer .vh .s-nm{font-size:30px}
+.viewer .vx{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;flex:none}
+.viewer .vx svg{width:17px;height:17px;stroke:currentColor;stroke-width:2;fill:none}
+.viewer .stage{position:relative;flex:1;min-height:0}
+.viewer model-viewer{width:100%;height:100%;background:transparent;--poster-color:transparent}
+.viewer model-viewer::part(default-progress-bar){display:none}
+.viewer .ld{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;transition:opacity .3s;font-size:12px}
+.viewer .ld.hide{opacity:0}
+.viewer .spin{width:46px;height:46px;border-radius:50%;border:2px solid var(--line);border-top-color:var(--terra);animation:sp 1s linear infinite;margin:0 auto 10px}
+@keyframes sp{to{transform:rotate(360deg)}}
+.viewer .vf{padding:0 18px calc(18px + var(--sb));text-align:center}
+.viewer .hint{font-size:11.5px;margin-bottom:10px;opacity:.75}
+.ar-btn{height:50px;padding:0 26px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:15px;font-weight:500;display:inline-flex;align-items:center;gap:8px}
+.ar-btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6}
+.ar-off{display:none;font-size:11.5px;line-height:1.7;background:rgba(255,255,255,.45);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;transition-duration:.01s!important}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="book" id="book"></div>
+
+  <div class="bar" id="bar">
+    <button class="nb" id="prev" aria-label="السابق"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button>
+    <button class="lbl" id="lbl" aria-label="الأقسام"></button>
+    <button class="nb" id="next" aria-label="التالي"><svg viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></svg></button>
+    <button class="nb" id="find" aria-label="بحث"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></svg></button>
+    <button class="cart-btn" id="cartBtn">طلبي<span class="badge" id="badge">0</span></button>
+  </div>
+
+  <div class="cover-wrap" id="coverWrap"><div class="cover" id="cover"></div></div>
+
+  <div class="scrim" id="scrim"></div>
+  <div class="sheet" id="itemSheet"></div>
+  <div class="sheet" id="cartSheet"></div>
+  <div class="sheet" id="jumpSheet"></div>
+
+  <div class="search" id="search">
+    <div class="sh"><input id="q" type="search" placeholder="ابحث عن صنف" autocomplete="off">
+      <button class="x" id="qx" aria-label="إغلاق"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+    <div class="sl" id="sl"></div>
+  </div>
+  <div class="viewer" id="viewer">
+    <div class="vh"><div><div class="s-sec" id="vSec"></div><div class="s-nm" id="vNm"></div><div class="s-en en" id="vEn"></div></div>
+      <button class="vx" id="vx" aria-label="إغلاق"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+    <div class="stage" id="stage"><div class="ld" id="vLd"><div><div class="spin"></div>جارٍ تجهيز المجسّم</div></div></div>
+    <div class="vf"><div class="hint">اسحب لتدوير المجسّم، وقرّب بإصبعين</div><div class="ar-off" id="arOff">العرض على الطاولة يعمل عند فتح القائمة من موقع ثلاث على الجوال.</div></div>
+  </div>
+  <div class="toast" id="toast"></div>
+</div>
+
+<script src="data.js"></script>
+<script>
+const M=window.MENU,$=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const DRINK_HDR=['hot','iced','matcha','mojito','protein'], FOOD_HDR=['signature','cakes','sweets','more','sandwiches'];
+const BOLD_TITLE=['hot','iced','matcha','milk'];
+const ALL=[];M.sections.forEach(s=>s.groups.forEach(g=>g.items.forEach(it=>{it.sec=s;ALL.push(it)})));
+const key=it=>it.sec.id+'|'+it.nm;
+const MODELS={'signature|كراميل تشابتر':{m:'caramelChapter',o:'15deg 82deg 0.62m',h:.15,photo:'caramel-chapter'},
+ 'hot|إسبريسو':{m:'espresso',o:'15deg 50deg 0.3m',h:0.078},
+ 'hot|إسبريسو ديكاف':{m:'espresso',o:'15deg 50deg 0.3m',h:0.078},
+ 'hot|لاتيه':{m:'latte',o:'15deg 50deg 0.44m',h:0.124},
+ 'hot|كابتشينو':{m:'cappuccino',o:'15deg 50deg 0.44m',h:0.124},
+ 'hot|كابتشينو ديكاف':{m:'cappuccino',o:'15deg 50deg 0.44m',h:0.124},
+ 'hot|سبانش لاتيه':{m:'spanishLatte',o:'15deg 50deg 0.44m',h:0.124},
+ 'hot|سبانش لاتيه ديكاف':{m:'spanishLatte',o:'15deg 50deg 0.44m',h:0.124},
+ 'hot|أمريكانو':{m:'americano',o:'15deg 50deg 0.44m',h:0.124},
+ 'hot|أمريكانو ديكاف':{m:'americano',o:'15deg 50deg 0.44m',h:0.124},
+ 'hot|قهوة تركية على الرمل':{m:'turkish',o:'15deg 50deg 0.3m',h:.078},'hot|كورتادو':{m:'cortado',o:'15deg 50deg 0.32m',h:0.081},
+ 'hot|كورتادو ديكاف':{m:'cortado',o:'15deg 50deg 0.32m',h:0.081},
+ 'hot|فلات وايت':{m:'flatWhite',o:'15deg 50deg 0.32m',h:0.081},
+ 'hot|فلات وايت ديكاف':{m:'flatWhite',o:'15deg 50deg 0.32m',h:0.081},
+ 'hot|قهوة اليوم':{m:'dripCoffee',o:'15deg 50deg 0.4m',h:0.108},
+ 'hot|V60':{m:'dripCoffee',o:'15deg 50deg 0.4m',h:0.108},
+ 'hot|في 60 ديكاف':{m:'dripCoffee',o:'15deg 50deg 0.4m',h:0.108},
+ 'hot|قهوة اليوم كبيرة — البرازيل':{m:'dripCoffee',o:'15deg 50deg 0.4m',h:0.108},
+ 'hot|قهوة اليوم كبيرة — أوغندا':{m:'dripCoffee',o:'15deg 50deg 0.4m',h:0.108},
+ 'matcha|ماتشا ساخن':{m:'hotMatcha',o:'15deg 50deg 0.44m',h:0.124},
+ 'tea|بابونج':{m:'hotTea',o:'15deg 50deg 0.4m',h:0.108},
+ 'tea|خوخ':{m:'hotTea',o:'15deg 50deg 0.4m',h:0.108},
+ 'tea|شاي إنجليزي':{m:'hotTea',o:'15deg 50deg 0.4m',h:0.108},
+ 'tea|شاي أسود فاخر':{m:'hotTea',o:'15deg 50deg 0.4m',h:0.108},
+ 'tea|شاي أسود':{m:'hotTea',o:'15deg 50deg 0.4m',h:0.108},
+ 'tea|شاي أبيض':{m:'hotTea',o:'15deg 50deg 0.4m',h:0.108},
+ 'tea|أولونغ':{m:'hotTea',o:'15deg 50deg 0.4m',h:0.108},
+ 'tea|شاي أخضر بالزهور':{m:'hotTea',o:'15deg 50deg 0.4m',h:0.108},
+ 'tea|شاي أخضر حصاد الصيف':{m:'hotTea',o:'15deg 50deg 0.4m',h:0.108},
+ 'tea|ليدي جراي':{m:'hotTea',o:'15deg 50deg 0.4m',h:0.108},
+ 'tea|حديقة الزهور':{m:'hotTea',o:'15deg 50deg 0.4m',h:0.108},
+ 'tea|شاي أكياس':{m:'hotTea',o:'15deg 50deg 0.4m',h:0.108},
+ 'tea|شاي ياسمين':{m:'hotTea',o:'15deg 50deg 0.4m',h:0.108},
+ 'tea|شاي أخضر لؤلؤ':{m:'hotTea',o:'15deg 50deg 0.4m',h:0.108},
+ 'tea|أزهار مشكلة':{m:'hotTea',o:'15deg 50deg 0.4m',h:0.108},
+ 'tea|قرفة':{m:'hotTea',o:'15deg 50deg 0.4m',h:0.108},
+ 'tea|قهوة بيضاء / كانارينو':{m:'hotTea',o:'15deg 50deg 0.4m',h:0.108},
+ 'tea|أكياس شاي أعشاب':{m:'hotTea',o:'15deg 50deg 0.4m',h:0.108},
+ 'iced|لاتيه بارد':{m:'icedLatte',o:'15deg 82deg 0.56m',h:.14},
+ 'iced|أيس أمريكانو':{m:'icedAmericano',o:'15deg 82deg 0.56m',h:.14},
+ 'iced|سبانش لاتيه بارد':{m:'icedSpanishLatte',o:'15deg 82deg 0.56m',h:.14},
+ 'iced|قهوة اليوم باردة':{m:'icedDrip',o:'15deg 82deg 0.56m',h:.14},
+ 'iced|V60 بارد':{m:'icedV60',o:'15deg 82deg 0.56m',h:.14},
+ 'iced|فريدو إسبريسو':{m:'freddo',o:'15deg 82deg 0.56m',h:.14},
+ 'iced|لاتيه بارد ديكاف':{m:'icedLatte',o:'15deg 82deg 0.56m',h:.14},
+ 'iced|سبانش لاتيه بارد ديكاف':{m:'icedSpanishLatte',o:'15deg 82deg 0.56m',h:.14},
+ 'iced|في 60 بارد ديكاف':{m:'icedV60',o:'15deg 82deg 0.56m',h:.14},
+ 'iced|أمريكانو بارد ديكاف':{m:'icedAmericano',o:'15deg 82deg 0.56m',h:.14},'matcha|ماتشا مثلج فراولة':{m:'matchaStrawberry',o:'15deg 82deg 0.64m',h:.16},
+ 'mojito|موهيتو فراولة':{m:'strawberryMojito',o:'15deg 82deg 0.66m',h:.17},'cakes|كيك جزر':{m:'carrotCake',o:'35deg 55deg 0.5m',h:.06},
+ 'matcha|ماتشا مثلج فانيلا':{m:'matchaVanilla',o:'15deg 82deg 0.64m',h:.16},'mojito|موهيتو أزرق':{m:'blueMojito',o:'15deg 82deg 0.66m',h:.17},
+ 'tea|شاي مثلج ليمون':{m:'icedTeaLemon',o:'15deg 82deg 0.56m',h:.14},
+ 'protein|بروتين شيك فراولة':{m:'shakeStrawberry',o:'20deg 68deg 0.48m',h:.12},'protein|بروتين شيك توت أزرق':{m:'shakeBlueberry',o:'20deg 68deg 0.48m',h:.12},
+ 'protein|بروتين شيك موز':{m:'shakeBanana',o:'20deg 68deg 0.48m',h:.12},'cakes|بيكان تارت':{m:'pecanTart',o:'30deg 52deg 0.38m',h:.03},
+ 'sweets|كوكيز شوكولاتة تشيبس':{m:'chocChipCookie',o:'30deg 50deg 0.34m',h:.015}};
+const baseKey=k=>String(k).split('||')[0];const byKey=k=>ALL.find(i=>key(i)===baseKey(k));
+
+/* ---------- cover ---------- */
+const C=M.cover;
+$('#cover').innerHTML=`<img class="pano" id="pano" src="assets/img/store-full.jpg" alt="" draggable="false">
+ <div class="shade"></div>
+ <div class="top"><span class="logo"></span><div class="tag">${esc(C.tag)}</div></div>
+ <div class="bottom"><h1>${(()=>{const w=(C.t1+' '+C.t2).split(' ');return esc(w[0])+'<br>'+esc(w.slice(1).join(' '))})()}</h1><div class="fd en">${esc(C.en)}</div><div class="sub">${esc(C.sub)}</div>
+  <button class="enter" id="enterBtn">افتح القائمة</button><div class="web en">${esc(C.web)}</div></div>`;
+/* cover parallax: phone tilt pans the photo (tilt left -> image moves right) */
+(()=>{const pano=$('#pano'),cv=$('#cover');let tx=0,ty=0,x=0,y=0,b0=null,live=true,gotMotion=false,drag=null,t0=performance.now();
+ const range=()=>{const r=cv.getBoundingClientRect(),w=pano.offsetWidth,h=pano.offsetHeight;return[Math.max(0,(w-r.width)/2-4),Math.max(0,(h-r.height)/2-4)]};
+ const cl=v=>Math.max(-1,Math.min(1,v));
+ function onOri(e){if(e.gamma==null)return;gotMotion=true;if(b0==null)b0=e.beta;
+  tx=cl(-e.gamma/28);ty=cl(-(e.beta-b0)/22)}
+ function tick(now){if(!live)return;
+  if(!gotMotion&&!drag){const t=(now-t0)/1000;tx=Math.sin(t*.35)*.45;ty=Math.sin(t*.27)*.3}
+  x+=(tx-x)*.08;y+=(ty-y)*.08;const[rx,ry]=range();
+  pano.style.transform=`translate(calc(-50% + ${(x*rx).toFixed(1)}px),calc(-50% + ${(y*ry).toFixed(1)}px))`;
+  requestAnimationFrame(tick)}
+ requestAnimationFrame(tick);
+ const DO=window.DeviceOrientationEvent;
+ if(DO&&typeof DO.requestPermission==='function'){let asked=false;
+  cv.addEventListener('touchend',()=>{if(asked)return;asked=true;DO.requestPermission().then(s=>{if(s==='granted')addEventListener('deviceorientation',onOri)}).catch(()=>{})},{passive:true})}
+ else if(DO)addEventListener('deviceorientation',onOri);
+ /* finger / mouse fallback */
+ cv.addEventListener('pointerdown',e=>{if(e.target.closest('button'))return;drag={x:e.clientX,y:e.clientY,tx,ty}});
+ addEventListener('pointermove',e=>{if(!drag){if(!gotMotion&&e.pointerType==='mouse'){const r=cv.getBoundingClientRect();
+   tx=cl((r.left+r.width/2-e.clientX)/(r.width/2));ty=cl((r.top+r.height/2-e.clientY)/(r.height/2))}return}
+  const r=cv.getBoundingClientRect();tx=cl(drag.tx+(e.clientX-drag.x)/(r.width*.5));ty=cl(drag.ty+(e.clientY-drag.y)/(r.height*.4))});
+ addEventListener('pointerup',()=>drag=null);
+ window.stopCover=()=>{live=false;removeEventListener('deviceorientation',onOri)};
+})();
+
+/* ---------- pages ---------- */
+const pages=[];
+function hdr(s){const right=DRINK_HDR.includes(s.id)?`<div class="brand"><span class="logo"></span><small>قائمة المشروبات</small></div>`
+  :FOOD_HDR.includes(s.id)?`<div class="brand"><b>ثلاث واحات</b></div>`:'<div></div>';
+  return `<div class="ph">${right}<div class="tag">${esc(M.cover.tag)}</div></div>`}
+function price(p,bold){return bold?`<span class="pr b">${p} SR</span>`:`<span class="pr">${p}<sup>SR</sup></span>`}
+let n=0;
+function itemHTML(it,s){const d=`style="animation-delay:${.05+(n++)*.035}s"`,k=esc(key(it));
+  if(it.img)return `<li class="item with-img" data-k="${k}" ${d}><div class="body"><div class="nm">${esc(it.nm)}${has3D(it)?'<span class="b3d">3D</span>':''}</div><span class="e2 en terra">${esc(it.en)}</span>
+   ${it.d?`<div class="d">${esc(it.d)}<span class="d-en en">${esc(it.d_en)}</span></div>`:''}${it.note?`<div class="note">${esc(it.note)}</div>`:''}
+   ${it.nut?`<span class="nut en">${esc(it.nut)}</span>`:''}</div><div class="thumb"><img src="assets/img/${it.img}.webp" alt=""><span class="pr">${it.p} SR</span></div></li>`;
+  const bold=!it.nut;
+  return `<li class="item" data-k="${k}" ${d}><div class="row"><span class="nm">${esc(it.nm)}${it.isNew?'<span class="new">جديد</span>':''}${has3D(it)?'<span class="b3d">3D</span>':''}</span>${price(it.p,bold)}</div>
+   <span class="e2 en">${esc(it.en)}</span>${it.nut?`<span class="nut en">${esc(it.nut)}</span>`:''}</li>`}
+const CZ=['specials','hot','iced','signature','matcha','tea','mojito','protein','milk','cakes','sweets','more','sandwiches'];
+// picture per item (section|name -> file under assets/); overrides 3D
+const PIC={'signature|كراميل تشابتر':'drinks/caramelChapter',
+ 'matcha|ماتشا مثلج فانيلا':'drinks/matchaVanilla','matcha|ماتشا مثلج توت العليق':'drinks/matchaRaspberry','matcha|ماتشا مثلج فراولة':'drinks/matchaStrawberry',
+ 'matcha|ماتشا مثلج كراميل':'drinks/matchaCaramel','matcha|أيس ماتشا إسبريسو':'drinks/matchaEspresso','matcha|بينك أوسيس ماتشا':'drinks/pinkOasis',
+ 'tea|شاي مثلج ليمون':'drinks/icedTeaLemon','tea|شاي مثلج خوخ':'drinks/icedTeaPeach',
+ 'mojito|موهيتو أزرق':'drinks/mojitoBlue','mojito|موهيتو فراولة':'drinks/mojitoStrawberry','mojito|موهيتو كيوي وليمون':'drinks/mojitoKiwi',
+ 'mojito|موهيتو توت أزرق':'drinks/mojitoBlueberry','mojito|موهيتو باشن فروت':'drinks/mojitoPassion','mojito|ليمون بريز':'drinks/lemonBreeze',
+ 'mojito|موهيتو ميكس بيري':'drinks/mojitoMixBerry','mojito|موهيتو فراولة وبطيخ':'drinks/mojitoWatermelon','mojito|موهيتو تفاح أخضر':'drinks/mojitoApple',
+ 'protein|بروتين شيك فراولة':'drinks/shakeStrawberry','protein|بروتين شيك توت أزرق':'drinks/shakeBlueberry','protein|بروتين شيك موز':'drinks/shakeBanana','cakes|كيك جزر':'food/carrotCake','cakes|كيك ليمون':'food/lemonCake','cakes|بنانا بريد':'food/bananaBread','cakes|بيكان تارت':'food/pecanTart','cakes|كيكة الشوكولاتة':'food/chocCake','cakes|لامينغتون':'food/lamington','sweets|كوكيز شوفان وهيل':'food/oatCookie','sweets|كعك تمر':'food/maamoul','sweets|لقيمات براونيز':'food/brownieBites','sweets|رز بالحليب':'food/ricePudding','sweets|كوكيز شوكولاتة تشيبس':'food/chipCookie','sweets|كوكيز شوكولاتة':'food/chocCookie','more|كيك فانيلا خالٍ من الجلوتين':'food/vanillaCake','more|بروتين بار 1':'food/proteinBar1','more|بروتين بار 2':'food/proteinBar2','sandwiches|توست ساندوتش':'food/toast','milk|حليب اللوز':'food/milkAlmond','milk|حليب جوز الهند':'food/milkCoconut','milk|حليب خالي من اللاكتوز':'food/milkLactose','milk|شراب الكراميل المملح':'food/syrupSaltCaramel','milk|شراب الفانيلا':'food/syrupVanilla','milk|شراب الفراولة':'food/syrupStrawberry','milk|شراب الكراميل':'food/syrupCaramel','milk|شراب التوت':'food/syrupRaspberry','milk|إضافة إسبريسو':'food/shotEspresso','milk|كريمة':'food/cream','tea|بابونج':'drinks/teaChamomile','tea|خوخ':'drinks/teaPeach','tea|شاي إنجليزي':'drinks/teaBlack','tea|شاي أسود فاخر':'drinks/teaBlack','tea|شاي أسود':'drinks/teaBlack','tea|شاي أبيض':'drinks/teaWhite','tea|أولونغ':'drinks/teaOolong','tea|شاي أخضر بالزهور':'drinks/teaGreen','tea|شاي أخضر حصاد الصيف':'drinks/teaGreen','tea|ليدي جراي':'drinks/teaLadyGrey','tea|حديقة الزهور':'drinks/teaFloral','tea|شاي أكياس':'drinks/teaBlack','tea|شاي ياسمين':'drinks/teaJasmine','tea|شاي أخضر لؤلؤ':'drinks/teaGreen','tea|أزهار مشكلة':'drinks/teaFloral','tea|قرفة':'drinks/teaCinnamon','tea|قهوة بيضاء / كانارينو':'drinks/teaWater','tea|أكياس شاي أعشاب':'drinks/teaFloral','cakes|كيكة العسل':'food/honeyCake','sweets|بارفيه':'food/parfait','sweets|براونيز':'food/brownie','sweets|شريحة شوكولاتة':'food/chocSlice','sweets|لقيمات تشيزكيك':'food/cheesecakeBites','more|مياه غازية':'food/sparkling','more|ماء نوفا':'food/nova','more|كوكيز خالٍ من الجلوتين':'food/gfCookie','more|كيك خالٍ من الجلوتين':'food/vanillaCake','sandwiches|ساندويتش شيدر':'food/cheddar','sandwiches|ساندويتش تركي':'food/turkey','sandwiches|ساندويتش فيتا':'food/feta','hot|إسبريسو':'food/espressoSet','hot|إسبريسو ديكاف':'food/espressoSet'};
+// colour field per picture, and per section when an item has neither
+const PBG={teaChamomile:'#a8862e',teaWhite:'#a89a5e',teaJasmine:'#a08a3a',teaGreen:'#7d8a3a',teaOolong:'#a8662a',teaLadyGrey:'#9a5228',teaPeach:'#b0703a',teaBlack:'#7a2e1a',teaCinnamon:'#843820',teaFloral:'#9a3a48',teaWater:'#8a8270',caramelChapter:'#a86c38',matchaVanilla:'#6f8f55',matchaRaspberry:'#7d8a55',matchaStrawberry:'#7d8a55',matchaCaramel:'#7a8a50',matchaEspresso:'#5f6f45',pinkOasis:'#8a8a5a',
+ icedTeaLemon:'#a87a30',icedTeaPeach:'#b8703a',mojitoBlue:'#2d5f8a',mojitoStrawberry:'#a8475a',mojitoKiwi:'#6b8a3a',mojitoBlueberry:'#4f3f78',mojitoPassion:'#b77a2a',
+ lemonBreeze:'#a8953a',mojitoMixBerry:'#7a2a44',mojitoWatermelon:'#b0495a',mojitoApple:'#6f8f3a',shakeStrawberry:'#b5727e',shakeBlueberry:'#6f5f96',shakeBanana:'#b89c52'};
+const SBG={milk:'#a8917a',signature:'#b0743d',matcha:'#6f8f55',tea:'#b06a35',mojito:'#4f7d8c',protein:'#b5838d',cakes:'#a8744e',sweets:'#8a5a3c',more:'#7d6a58',sandwiches:'#9a7a52'};
+function has3D(it){return !!MODELS[key(it)]&&!picOf(it)}
+const IXT={specials:{p:'drinks/caramelChapter',c:'#a86c38',w:1},hot:{m:'latte',c:'#7a4a2e'},iced:{p:'drinks/icedLatte',c:'#9c7458'},signature:{p:'drinks/caramelChapter',c:'#b0743d'},
+ matcha:{p:'drinks/matchaStrawberry',c:'#5f7f45'},tea:{p:'drinks/teaBlack',c:'#7a2e1a'},mojito:{p:'drinks/mojitoStrawberry',c:'#a8475a'},protein:{p:'drinks/shakeStrawberry',c:'#b5727e'},
+ milk:{p:'food/syrupCaramel',c:'#a8917a'},cakes:{p:'food/honeyCake',c:'#a8744e'},sweets:{p:'food/chipCookie',c:'#8a5a3c'},more:{p:'food/proteinBar1',c:'#7d6a58'},sandwiches:{p:'food/toast',c:'#9a7a52'},events:{c:'#3d5248',w:1}};
+function ixTile(s,i,attr,extra=''){const t=IXT[s.id]||{};const pic=t.p?`<img src="assets/${t.p}.webp?v=26" alt="" loading="lazy" class="${t.p.startsWith('food/')?'fd':''}">`:t.m?`<img data-still="${t.m}" alt="">`:'<span class="mk"></span>';
+  return `<a ${attr}="${i+1}" class="${t.w&&!extra?'w':''} ${extra}" style="--i:${i};--c:${t.c||'#8a5a3c'}"><span class="tx"><span class="tt">${esc(s.title)}</span><span class="ee en">${esc(s.en)}</span></span><span class="im">${pic}</span></a>`}
+async function ixStills(root){const ims=[...root.querySelectorAll('img[data-still]')];if(!ims.length)return;try{const m=await getM3D();for(const im of ims){const k=im.dataset.still;SNAP['ix'+k]=SNAP['ix'+k]||m.still(k,{w:360,h:440,phi:PHI(k)});im.src=await SNAP['ix'+k];im.removeAttribute('data-still')}}catch(e){console.error(e)}}
+function picOf(it){const k=key(it);if(PIC[k])return PIC[k];const md=MODELS[k];return md&&PHOTO[md.m]?'drinks/'+PHOTO[md.m]:null}
+function bgOf(it){const p=picOf(it),md=MODELS[key(it)];if(p&&PBG[p.split('/').pop()])return PBG[p.split('/').pop()];if(md&&BG[md.m])return BG[md.m];return SBG[it.sec.id]||'#8a5a3c'}
+// real photographed drinks (Adobe Stock, background removed) used instead of the 3D still
+const PHOTO={icedLatte:'icedLatte',icedAmericano:'icedAmericano',icedSpanishLatte:'icedSpanishLatte',icedDrip:'icedV60',icedV60:'icedV60',freddo:'freddo'};
+// colour field per drink (Thalath palette, deepened so the white card and cup read clearly)
+const BG={espresso:'#7a4a2e',turkish:'#5b3a26',latte:'#b8875f',spanishLatte:'#c39058',cappuccino:'#a9805e',americano:'#4a3024',flatWhite:'#9a7052',cortado:'#86593d',
+  dripCoffee:'#3f2b22',hotTea:'#c26d2f',hotMatcha:'#6f8f55',caramelChapter:'#b0743d',
+  icedLatte:'#9c7458',icedAmericano:'#3e2a22',icedSpanishLatte:'#b08350',icedDrip:'#5a3a28',icedV60:'#6e4a32',freddo:'#7d5236'};
+// what is in each drink (shown under the cup)
+const DESC={'إسبريسو':'جرعة مركّزة من القهوة تُستخلص بالماء الساخن تحت ضغط عالٍ، وتعلوها طبقة الكريما.',
+ 'لاتيه':'إسبريسو مع حليب مبخّر وطبقة خفيفة من رغوة الحليب.',
+ 'كابتشينو':'إسبريسو مع حليب مبخّر ورغوة حليب كثيفة، مع رشّة كاكاو.',
+ 'سبانش لاتيه':'إسبريسو مع حليب مبخّر وحليب مكثّف محلّى.',
+ 'أمريكانو':'إسبريسو مع ماء ساخن.',
+ 'كورتادو':'إسبريسو مع كمية مساوية من الحليب المبخّر.',
+ 'فلات وايت':'جرعتان من الإسبريسو مع حليب مبخّر وطبقة رغوة رقيقة.',
+ 'قهوة اليوم':'قهوة مفلترة من محصول يتغيّر يوميًا.',
+ 'قهوة تركية على الرمل':'قهوة مطحونة ناعمًا تُطبخ مع الماء على رمل ساخن، وتُقدَّم برغوتها.',
+ 'V60':'قهوة مختصة تُحضَّر بالتقطير اليدوي باستخدام أداة V60.',
+ 'قهوة اليوم كبيرة — البرازيل':'قهوة مفلترة من محصول برازيلي، بحجم كبير.',
+ 'قهوة اليوم كبيرة — أوغندا':'قهوة مفلترة من محصول أوغندي، بحجم كبير.',
+ 'كراميل تشابتر':'قهوة باردة بالحليب وصوص الكراميل مع الثلج.',
+ 'لاتيه بارد':'إسبريسو مع حليب بارد وثلج.',
+ 'أيس أمريكانو':'إسبريسو مع ماء بارد وثلج.',
+ 'أمريكانو بارد':'إسبريسو مع ماء بارد وثلج.',
+ 'سبانش لاتيه بارد':'إسبريسو مع حليب بارد وحليب مكثّف محلّى وثلج.',
+ 'قهوة اليوم باردة':'قهوة مفلترة من محصول يتغيّر يوميًا، تُقدَّم مع الثلج.',
+ 'V60 بارد':'قهوة مختصة تُحضَّر بالتقطير اليدوي باستخدام أداة V60، وتُقدَّم مع الثلج.',
+ 'فريدو إسبريسو':'إسبريسو يُخفق مع الثلج حتى يصبح له قوام رغوي، ويُقدَّم باردًا.',
+ 'ماتشا ساخن':'ماتشا مخفوقة مع حليب مبخّر.',
+ 'ماتشا مثلج فانيلا':'ماتشا مع حليب بارد وشراب الفانيلا وثلج.',
+ 'ماتشا مثلج توت العليق':'ماتشا مع حليب بارد وشراب توت العليق وثلج.',
+ 'ماتشا مثلج فراولة':'ماتشا مع حليب بارد وشراب الفراولة وثلج.',
+ 'ماتشا مثلج كراميل':'ماتشا مع حليب بارد وشراب الكراميل وثلج.',
+ 'أيس ماتشا إسبريسو':'ماتشا مع حليب بارد وجرعة إسبريسو وثلج.',
+ 'بابونج':'زهور البابونج منقوعة في الماء الساخن.',
+ 'خوخ':'شاي بنكهة الخوخ.',
+ 'شاي إنجليزي':'شاي أسود على الطريقة الإنجليزية.',
+ 'شاي أسود فاخر':'شاي أسود من أوراق فاخرة.',
+ 'شاي أسود':'شاي أسود يُحضَّر بالماء الساخن.',
+ 'شاي أبيض':'شاي أبيض بطعم خفيف.',
+ 'أولونغ':'شاي أولونغ، يقع بين الشاي الأخضر والأسود.',
+ 'شاي أخضر بالزهور':'شاي أخضر مع الزهور.',
+ 'شاي أخضر حصاد الصيف':'شاي أخضر من حصاد الصيف.',
+ 'ليدي جراي':'شاي أسود بالبرغموت وقشر الحمضيات.',
+ 'حديقة الزهور':'خلطة شاي بالزهور.',
+ 'شاي أكياس':'شاي أكياس مع الماء الساخن.',
+ 'شاي ياسمين':'شاي أخضر بزهور الياسمين.',
+ 'شاي أخضر لؤلؤ':'أوراق شاي أخضر ملفوفة على شكل حبات صغيرة.',
+ 'أزهار مشكلة':'أزهار مشكلة منقوعة في الماء الساخن.',
+ 'قرفة':'أعواد القرفة منقوعة في الماء الساخن.',
+ 'أكياس شاي أعشاب':'أكياس شاي أعشاب مع الماء الساخن.',
+ 'شاي مثلج ليمون':'شاي بارد بالليمون مع الثلج.',
+ 'شاي مثلج خوخ':'شاي بارد بالخوخ مع الثلج.',
+ 'موهيتو أزرق':'نعناع وليمون ومياه غازية، بلون أزرق.',
+ 'موهيتو فراولة':'نعناع وليمون ومياه غازية مع الفراولة.',
+ 'موهيتو كيوي وليمون':'نعناع وليمون ومياه غازية مع الكيوي.',
+ 'موهيتو توت أزرق':'نعناع وليمون ومياه غازية مع التوت الأزرق.',
+ 'موهيتو باشن فروت':'نعناع وليمون ومياه غازية مع الباشن فروت.',
+ 'ليمون بريز':'مشروب بارد بالليمون.',
+ 'موهيتو ميكس بيري':'نعناع وليمون ومياه غازية مع توت مشكّل.',
+ 'موهيتو فراولة وبطيخ':'نعناع وليمون ومياه غازية مع الفراولة والبطيخ.',
+ 'موهيتو تفاح أخضر':'نعناع وليمون ومياه غازية مع التفاح الأخضر.',
+ 'حليب اللوز':'بديل للحليب من اللوز، يُضاف لأي مشروب.',
+ 'حليب جوز الهند':'بديل للحليب من جوز الهند، يُضاف لأي مشروب.',
+ 'حليب خالي من اللاكتوز':'حليب خالٍ من اللاكتوز، يُضاف لأي مشروب.',
+ 'شراب الكراميل المملح':'شراب الكراميل المملح يُضاف لمشروبك.',
+ 'شراب الفانيلا':'شراب الفانيلا يُضاف لمشروبك.',
+ 'شراب الفراولة':'شراب الفراولة يُضاف لمشروبك.',
+ 'شراب الكراميل':'شراب الكراميل يُضاف لمشروبك.',
+ 'شراب التوت':'شراب التوت يُضاف لمشروبك.',
+ 'إضافة إسبريسو':'جرعة إسبريسو إضافية لمشروبك.',
+ 'كريمة':'كريمة مخفوقة فوق مشروبك.',
+
+ 'كيك جزر':'كيك الجزر بطبقات من كريمة الجبن.',
+ 'كيك ليمون':'كيك إسفنجي بنكهة الليمون.',
+ 'كيك ماربل':'كيك بعجينتي الفانيلا والشوكولاتة.',
+ 'بنانا بريد':'كيك الموز المخبوز على شكل رغيف.',
+ 'بيكان تارت':'تارت بحشوة الكراميل وجوز البيكان.',
+ 'كيك تمر':'كيك التمر الطري مع صوص الكراميل.',
+ 'كيكة العسل':'طبقات رقيقة من كيك العسل مع الكريمة.',
+ 'كيكة الشوكولاتة':'كيك الشوكولاتة بطبقات من كريمة الشوكولاتة.',
+ 'كيكة اليقطين':'كيك بنكهة اليقطين والبهارات.',
+ 'لامينغتون':'كيك إسفنجي مغطى بالشوكولاتة وجوز الهند.',
+ 'كوكيز شوفان وهيل':'كوكيز بالشوفان والهيل.',
+ 'كعك تمر':'كعك محشو بالتمر.',
+ 'لقيمات براونيز':'قطع صغيرة من البراونيز.',
+ 'لقيمات تشيزكيك':'قطع صغيرة من التشيزكيك.',
+ 'رز بالحليب':'أرز مطبوخ بالحليب والسكر.',
+ 'بارفيه':'طبقات من الزبادي والجرانولا والفاكهة.',
+ 'براونيز':'قطعة براونيز بالشوكولاتة.',
+ 'كوكيز شوكولاتة تشيبس':'كوكيز بقطع الشوكولاتة.',
+ 'كوكيز شوكولاتة':'كوكيز بالشوكولاتة.',
+ 'كيك فانيلا خالٍ من الجلوتين':'كيك بالفانيلا خالٍ من الجلوتين.',
+ 'كيك ماربل خالٍ من الجلوتين':'كيك ماربل خالٍ من الجلوتين.',
+ 'كيك خالٍ من الجلوتين':'كيك خالٍ من الجلوتين.',
+ 'كوكيز خالٍ من الجلوتين':'كوكيز خالية من الجلوتين.',
+ 'بروتين بار 1':'لوح بروتين.',
+ 'بروتين بار 2':'لوح بروتين.',
+ 'ماء نوفا':'مياه شرب معبأة.',
+ 'مياه غازية':'مياه غازية.',
+ 'توست ساندوتش':'ساندويتش بخبز التوست المحمّص.',
+ 'ساندويتش حلومي':'ساندويتش بجبن الحلومي.',
+ 'ساندويتش شيدر':'ساندويتش بجبن الشيدر.',
+ 'ساندويتش فيتا':'ساندويتش بجبن الفيتا.',
+ 'ساندويتش مرتديلا':'ساندويتش بالمرتديلا.',
+ 'ساندويتش تركي':'ساندويتش بشرائح التركي.',
+ 'ساندويتش تونة':'ساندويتش بالتونة.',
+ 'ساندويتش زعتر':'ساندويتش بالزعتر.',
+ 'ساندويتش دجاج':'ساندويتش بالدجاج.'};
+const DESC_EN={'إسبريسو':'A concentrated shot of coffee extracted under high pressure, topped with crema.',
+ 'لاتيه':'Espresso with steamed milk and a light layer of milk foam.',
+ 'كابتشينو':'Espresso with steamed milk and thick milk foam, dusted with cocoa.',
+ 'سبانش لاتيه':'Espresso with steamed milk and sweetened condensed milk.',
+ 'أمريكانو':'Espresso with hot water.',
+ 'كورتادو':'Espresso with an equal amount of steamed milk.',
+ 'فلات وايت':'A double espresso with steamed milk and a thin layer of microfoam.',
+ 'قهوة اليوم':'Filter coffee from a crop that changes daily.',
+ 'قهوة تركية على الرمل':'Finely ground coffee brewed with water on hot sand, served with its foam.',
+ 'V60':'Specialty coffee, hand-brewed through a V60 dripper.',
+ 'قهوة اليوم كبيرة — البرازيل':'Filter coffee from a Brazilian crop, large size.',
+ 'قهوة اليوم كبيرة — أوغندا':'Filter coffee from a Ugandan crop, large size.',
+ 'كراميل تشابتر':'Iced coffee with milk and caramel sauce.',
+ 'لاتيه بارد':'Espresso with cold milk over ice.',
+ 'أيس أمريكانو':'Espresso with cold water over ice.',
+ 'أمريكانو بارد':'Espresso with cold water over ice.',
+ 'سبانش لاتيه بارد':'Espresso with cold milk and sweetened condensed milk over ice.',
+ 'قهوة اليوم باردة':'Filter coffee from a crop that changes daily, served over ice.',
+ 'V60 بارد':'Specialty coffee hand-brewed through a V60 dripper, served over ice.',
+ 'فريدو إسبريسو':'Espresso shaken with ice until frothy, served cold.',
+ 'ماتشا ساخن':'Matcha whisked with steamed milk.',
+ 'ماتشا مثلج فانيلا':'Matcha with cold milk, vanilla syrup and ice.',
+ 'ماتشا مثلج توت العليق':'Matcha with cold milk, raspberry syrup and ice.',
+ 'ماتشا مثلج فراولة':'Matcha with cold milk, strawberry syrup and ice.',
+ 'ماتشا مثلج كراميل':'Matcha with cold milk, caramel syrup and ice.',
+ 'أيس ماتشا إسبريسو':'Matcha with cold milk, a shot of espresso and ice.',
+ 'بابونج':'Chamomile flowers steeped in hot water.',
+ 'خوخ':'Peach-flavoured tea.',
+ 'شاي إنجليزي':'Black tea, English style.',
+ 'شاي أسود فاخر':'Black tea from premium leaves.',
+ 'شاي أسود':'Black tea brewed with hot water.',
+ 'شاي أبيض':'White tea with a delicate taste.',
+ 'أولونغ':'Oolong tea, between green and black tea.',
+ 'شاي أخضر بالزهور':'Green tea with flowers.',
+ 'شاي أخضر حصاد الصيف':'Green tea from the summer harvest.',
+ 'ليدي جراي':'Black tea with bergamot and citrus peel.',
+ 'حديقة الزهور':'A floral tea blend.',
+ 'شاي أكياس':'Tea bag with hot water.',
+ 'شاي ياسمين':'Green tea with jasmine flowers.',
+ 'شاي أخضر لؤلؤ':'Green tea leaves rolled into small pearls.',
+ 'أزهار مشكلة':'Mixed flowers steeped in hot water.',
+ 'قرفة':'Cinnamon sticks steeped in hot water.',
+ 'أكياس شاي أعشاب':'Herbal tea bags with hot water.',
+ 'شاي مثلج ليمون':'Iced tea with lemon.',
+ 'شاي مثلج خوخ':'Iced tea with peach.',
+ 'موهيتو أزرق':'Mint, lime and soda, in blue.',
+ 'موهيتو فراولة':'Mint, lime and soda with strawberry.',
+ 'موهيتو كيوي وليمون':'Mint, lime and soda with kiwi.',
+ 'موهيتو توت أزرق':'Mint, lime and soda with blueberry.',
+ 'موهيتو باشن فروت':'Mint, lime and soda with passion fruit.',
+ 'ليمون بريز':'A cold lemon drink.',
+ 'موهيتو ميكس بيري':'Mint, lime and soda with mixed berries.',
+ 'موهيتو فراولة وبطيخ':'Mint, lime and soda with strawberry and watermelon.',
+ 'موهيتو تفاح أخضر':'Mint, lime and soda with green apple.',
+ 'حليب اللوز':'Almond milk, for any drink.',
+ 'حليب جوز الهند':'Coconut milk, for any drink.',
+ 'حليب خالي من اللاكتوز':'Lactose-free milk, for any drink.',
+ 'شراب الكراميل المملح':'Salted caramel syrup added to your drink.',
+ 'شراب الفانيلا':'Vanilla syrup added to your drink.',
+ 'شراب الفراولة':'Strawberry syrup added to your drink.',
+ 'شراب الكراميل':'Caramel syrup added to your drink.',
+ 'شراب التوت':'Raspberry syrup added to your drink.',
+ 'إضافة إسبريسو':'An extra shot of espresso.',
+ 'كريمة':'Whipped cream on top of your drink.',
+
+ 'كيك جزر':'Carrot cake layered with cream cheese frosting.',
+ 'كيك ليمون':'Lemon-flavoured sponge cake.',
+ 'كيك ماربل':'Vanilla and chocolate swirled cake.',
+ 'بنانا بريد':'Banana loaf cake.',
+ 'بيكان تارت':'Tart filled with caramel and pecans.',
+ 'كيك تمر':'Soft date cake with toffee sauce.',
+ 'كيكة العسل':'Thin layers of honey cake with cream.',
+ 'كيكة الشوكولاتة':'Chocolate cake layered with chocolate cream.',
+ 'كيكة اليقطين':'Pumpkin and spice cake.',
+ 'لامينغتون':'Sponge cake coated in chocolate and coconut.',
+ 'كوكيز شوفان وهيل':'Oat and cardamom cookie.',
+ 'كعك تمر':'Cookies filled with dates.',
+ 'لقيمات براونيز':'Small brownie bites.',
+ 'لقيمات تشيزكيك':'Small cheesecake bites.',
+ 'رز بالحليب':'Rice cooked with milk and sugar.',
+ 'بارفيه':'Layers of yogurt, granola and fruit.',
+ 'براونيز':'Chocolate brownie.',
+ 'كوكيز شوكولاتة تشيبس':'Cookie with chocolate chips.',
+ 'كوكيز شوكولاتة':'Chocolate cookie.',
+ 'كيك فانيلا خالٍ من الجلوتين':'Gluten-free vanilla cake.',
+ 'كيك ماربل خالٍ من الجلوتين':'Gluten-free marble cake.',
+ 'كيك خالٍ من الجلوتين':'Gluten-free cake.',
+ 'كوكيز خالٍ من الجلوتين':'Gluten-free cookie.',
+ 'بروتين بار 1':'Protein bar.',
+ 'بروتين بار 2':'Protein bar.',
+ 'ماء نوفا':'Bottled drinking water.',
+ 'مياه غازية':'Sparkling water.',
+ 'توست ساندوتش':'Sandwich on toasted bread.',
+ 'ساندويتش حلومي':'Sandwich with halloumi cheese.',
+ 'ساندويتش شيدر':'Sandwich with cheddar cheese.',
+ 'ساندويتش فيتا':'Sandwich with feta cheese.',
+ 'ساندويتش مرتديلا':'Sandwich with mortadella.',
+ 'ساندويتش تركي':'Sandwich with turkey slices.',
+ 'ساندويتش تونة':'Tuna sandwich.',
+ 'ساندويتش زعتر':'Za’atar sandwich.',
+ 'ساندويتش دجاج':'Chicken sandwich.'};
+function descEnOf(it){if(it.d_en)return it.d_en;if(DESC_EN[it.nm])return DESC_EN[it.nm];const base=it.nm.replace(/\s*ديكاف$/,'').replace(/^في 60/,'V60');if(DESC_EN[base])return DESC_EN[base].replace(/\.$/,'')+', decaf.';return ''}
+function descOf(it){if(it.d)return it.d;if(DESC[it.nm])return DESC[it.nm];const base=it.nm.replace(/\s*ديكاف$/,'').replace(/^في 60/,'V60');if(DESC[base])return DESC[base].replace(/\.$/,'')+'، بنسخة منزوعة الكافيين.';return ''}
+function czItems(s){if(s.id==='specials'){const it=byKey('signature|'+s.feature.nm);return it?[it]:[]}return s.groups.flatMap(g=>g.items)}
+function czHTML(s){const its=czItems(s);
+  return `<div class="scroll"><div class="sb"><div class="sb-top"><div class="sb-badge"><span class="logo"></span></div><small class="en">${esc(s.en)}</small></div>
+   <div class="cz">${its.map((it,i)=>`<figure class="sb-it" data-i="${i}"><span class="ld"></span><img alt="${esc(it.nm)}"></figure>`).join('')}<canvas class="sb-live"></canvas></div>
+   <div class="sb-card"><div class="sb-body"></div></div>
+   ${its.length>1?`<div class="sb-dots">${its.map((_,i)=>`<i data-d="${i}"></i>`).join('')}</div>`:''}</div></div>`}
+function sectionHTML(s){n=0;if(CZ.includes(s.id))return czHTML(s);
+  if(s.id==='specials'){const f=s.feature;return `<div class="scroll">${hdr(s)}<div class="hero"><div class="t"><h2>${esc(s.title)}</h2><div class="sub en">${esc(s.en)}</div></div></div>
+   <div class="rule"></div><div class="feature" data-k="${esc('signature|'+f.nm)}"><div class="l">${esc(f.label)}</div><div class="n">${esc(f.nm)}</div><div class="ph2"><div class="p">${f.p} <small>ر.س</small></div><img src="assets/img/caramel-chapter-sq.jpg" alt=""></div></div>
+   <div class="handle en">${esc(M.cover.handle)}</div></div>`}
+  if(s.id==='events')return `<div class="scroll">${hdr(s)}<div class="hero"><div class="t"><h2>${esc(s.title)}</h2><div class="sub en">${esc(s.en)}</div></div></div>
+   <div class="rule"></div><div class="month">${esc(s.month)}</div>${s.events.map(e=>`<div class="ev"><h4>${esc(e[0])}</h4><p>${esc(e[1])}</p></div>`).join('')}
+   <div class="ev-foot"><span>${esc(s.footer[0])}</span><span class="en">${esc(s.footer[1])}</span></div><div class="handle en">${esc(M.cover.handle)}</div></div>`;
+  const inkSub=['hot','iced','matcha'].includes(s.id);
+  return `<div class="scroll">${hdr(s)}
+   <div class="hero"><div class="t"><h2 class="${BOLD_TITLE.includes(s.id)?'bold':''} ${s.title.length>10?'long':''}">${esc(s.title)}</h2><div class="sub en ${inkSub?'ink':''}">${esc(s.en)}</div>${s.size?`<span class="pill en">${esc(s.size)}</span>`:''}</div>
+   ${s.img?`<div class="pic"><img src="assets/img/${s.img}.webp" alt=""><i></i><i></i></div>`:s.id==='signature'?`<div class="pic photo"><img src="assets/img/caramel-chapter-sq.jpg" alt=""><i></i><i></i></div>`:''}</div>
+   <div class="rule"></div>
+   ${s.intro?`<div class="intro">${esc(s.intro[0])}<small class="en">${esc(s.intro[1])}</small></div>`:''}
+   ${s.groups.map(g=>`${g.title?`<div class="grp-h"><b>${esc(g.title)}</b>${g.en?`<span class="en">${esc(g.en)}</span>`:''}</div>`:''}<ul class="items">${g.items.map(it=>itemHTML(it,s)).join('')}</ul>`).join('')}
+   ${s.banner?`<div class="banner">${esc(s.banner[0])}<small class="en">${esc(s.banner[1])}</small></div>`:''}
+   ${s.notes?`<div class="notes"><span>${esc(s.notes[0])}</span><span class="en">${esc(s.notes[1])}</span></div>`:''}
+   <div class="handle en">${esc(M.cover.handle)}</div></div>`}
+
+pages.push({key:'index',label:'الأقسام',html:`<div class="scroll ix-page"><div class="ix-top"><span class="logo"></span></div>
+ <div class="ix-h">الأقسام<small class="en">${esc(M.cover.en)}</small></div>
+ <div class="ixg">${M.sections.map((s,i)=>ixTile(s,i,'data-go')).join('')}</div>
+ <div class="ix-end"><span class="en">${esc(M.cover.handle)}</span></div></div>`});
+M.sections.forEach(s=>pages.push({key:s.id,label:s.title,html:sectionHTML(s),cls:CZ.includes(s.id)?'sbp':''}));
+const X=M.close;
+pages.push({key:'close',label:'',dark:1,cls:'close',html:`<div class="scroll"><span class="logo"></span><span class="vine"></span>
+ <h2>${esc(X.t1)}<br><span>${esc(X.t2)}</span></h2>
+ <div class="feats">${[['M7 14c1.5 2 3 3 5 3s3.5-1 5-3M9 9.5v.5M15 9.5v.5','circle'],['M12 20s-7-4.4-7-9.5A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.5C19 15.6 12 20 12 20z',''],['M5 19C5 10 11 5 19 5c0 8-5 14-14 14zM5 19l9-9','']].map((ic,i)=>{const f=X.feats[2-i];return `<div><svg viewBox="0 0 24 24">${ic[1]?'<circle cx="12" cy="12" r="9"/>':''}<path d="${ic[0]}"/></svg>${esc(f[0])}<small class="en">${esc(f[1])}</small></div>`}).join('')}</div>
+ <div class="hr"></div><div class="al">${esc(X.allergy[0])}<small class="en">${esc(X.allergy[1])}</small></div>
+ <a class="web en" href="https://${esc(X.web)}">${esc(X.web)}</a></div>`});
+
+const book=$('#book');
+pages.forEach((p,i)=>{const el=document.createElement('section');el.className='page'+(p.dark?' dark':'')+(p.cls?' '+p.cls:'');el.innerHTML=p.html;book.appendChild(el)});
+const els=[...book.children];
+
+/* ---------- navigation ---------- */
+let cur=0,busy=false;
+function ui(){const p=pages[cur],s=M.sections[cur-1];
+  $('#lbl').innerHTML=p.key==='close'?'':`<b>${esc(p.label)}</b>${s?`<span class="en">${s.no}</span> · `:''}${cur+1}/${pages.length}`;
+  $('#prev').disabled=cur===0;$('#next').disabled=cur===pages.length-1;$('#bar').classList.toggle('on-dark',!!p.dark);
+  try{history.replaceState(null,'','#'+p.key)}catch(e){}}
+function show(i){els.forEach(e=>e.classList.remove('on','under','revealed'));els[i].classList.add('on');els[i].querySelector('.scroll').scrollTop=0;if(els[i].querySelector('.cz'))czInit(els[i]);if(els[i].querySelector('.ixg'))ixStills(els[i]);
+  requestAnimationFrame(()=>els[i].classList.add('revealed'));cur=i;ui()}
+function go(i){if(busy||i===cur||i<0||i>=pages.length)return;busy=true;const a=els[cur],b=els[i];b.querySelector('.scroll').scrollTop=0;
+  if(i>cur){b.classList.add('under');a.classList.add('flip-out');setTimeout(()=>{a.classList.remove('flip-out');show(i);busy=false},730)}
+  else{a.classList.add('under');a.classList.remove('on');b.classList.add('flip-in');setTimeout(()=>{b.classList.remove('flip-in');show(i);busy=false},730)}}
+$('#next').onclick=()=>go(cur+1);$('#prev').onclick=()=>go(cur-1);
+let sx=0,sy=0,st=0;
+book.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY;st=Date.now()},{passive:true});
+book.addEventListener('touchend',e=>{if(e.target.closest('.cz'))return;const dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;
+  if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.4&&Date.now()-st<700)dx>0?go(cur+1):go(cur-1)},{passive:true});
+document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')go(cur+1);if(e.key==='ArrowRight')go(cur-1)});
+book.addEventListener('click',e=>{const g=e.target.closest('[data-go]');if(g)return go(+g.dataset.go);
+  const it=e.target.closest('[data-k]');if(it)openItem(byKey(it.dataset.k))});
+let start=0;const h=location.hash.slice(1);if(h){const ix=pages.findIndex(p=>p.key===h);if(ix>=0)start=ix}
+$('#enterBtn').onclick=()=>{$('#cover').classList.add('open');setTimeout(()=>{$('#coverWrap').style.display='none';stopCover()},1100);show(start)};
+ui();
+
+/* ---------- order ---------- */
+let cart={};try{cart=JSON.parse(localStorage.getItem('thalath-order')||'{}')||{}}catch(e){}
+const save=()=>{try{localStorage.setItem('thalath-order',JSON.stringify(cart))}catch(e){}};
+const count=()=>Object.values(cart).reduce((a,b)=>a+b,0);
+function badge(b){const el=$('#badge'),c=count();el.textContent=c;el.classList.toggle('show',c>0);if(b){el.classList.remove('bump');void el.offsetWidth;el.classList.add('bump')}}
+function add(k){cart[k]=(cart[k]||0)+1;save();badge(1);toast('أُضيف '+byKey(k).nm)}
+// add-ons chosen with a drink, kept in the cart key after "||"
+const OPT_SECS=['specials','hot','iced','signature','matcha'];
+function addonItems(){const m=M.sections.find(x=>x.id==='milk');return m?m.groups.flatMap(g=>g.items):[]}
+const optsOf=k=>{const o=String(k).split('||')[1];return o?o.split('+').filter(Boolean):[]};
+const addonP=n=>{const a=addonItems().find(i=>i.nm===n);return a?+a.p:0};
+const priceOf=k=>{const it=byKey(k);return (it?+it.p:0)+optsOf(k).reduce((t,n)=>t+addonP(n),0)};
+function wantsOpts(it){return it&&OPT_SECS.includes(it.sec.id)}
+function openOpts(it){const s=$('#itemSheet'),k=key(it),A=addonItems();
+  const milks=A.filter(i=>i.nm.startsWith('حليب')),syr=A.filter(i=>i.nm.startsWith('شراب')),ext=A.filter(i=>!i.nm.startsWith('حليب')&&!i.nm.startsWith('شراب'));
+  const sel={milk:'',syr:'',ext:new Set()};
+  const chip=(g,i)=>`<button class="op" data-g="${g}" data-n="${esc(i.nm)}"><span>${esc(i.nm)}</span><b class="en">+${i.p}</b></button>`;
+  s.innerHTML=`<div class="grab"></div><div class="s-sec">${esc(it.sec.title)}${it.sec.size?' · <span class="en">'+esc(it.sec.size)+'</span>':''}</div>
+   <div class="s-nm">${esc(it.nm)}</div><div class="s-en en">${esc(it.en)}</div>
+   <div class="og"><div class="ot">الحليب</div><div class="ops"><button class="op on" data-g="milk" data-n=""><span>حليب عادي</span></button>${milks.map(i=>chip('milk',i)).join('')}</div></div>
+   <div class="og"><div class="ot">شراب إضافي</div><div class="ops"><button class="op on" data-g="syr" data-n=""><span>بدون</span></button>${syr.map(i=>chip('syr',i)).join('')}</div></div>
+   <div class="og"><div class="ot">إضافات</div><div class="ops">${ext.map(i=>chip('ext',i)).join('')}</div></div>
+   <div class="s-row"><div class="s-pr"><span id="opP">${it.p}</span> <span class="cur">SR</span></div><div class="s-acts"><button class="btn terra" id="addB">أضف إلى الطلب</button></div></div>`;
+  const total=()=>{const n=[sel.milk,sel.syr,...sel.ext].filter(Boolean);$('#opP').textContent=+it.p+n.reduce((t,x)=>t+addonP(x),0);return n};
+  s.querySelectorAll('.op').forEach(b=>b.onclick=()=>{const g=b.dataset.g,n=b.dataset.n;
+    if(g==='ext'){sel.ext.has(n)?sel.ext.delete(n):sel.ext.add(n);b.classList.toggle('on')}
+    else{sel[g]=n;s.querySelectorAll(`.op[data-g="${g}"]`).forEach(x=>x.classList.toggle('on',x===b))}total()});
+  s.querySelector('#addB').onclick=()=>{const n=total();add(n.length?k+'||'+n.join('+'):k);scrim.click()};openSheet(s)}
+badge();
+let tt;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),1600)}
+
+const scrim=$('#scrim');
+function openSheet(s){scrim.classList.add('show');s.classList.add('show')}
+scrim.onclick=()=>{document.querySelectorAll('.sheet.show').forEach(s=>s.classList.remove('show'));scrim.classList.remove('show')};
+function openItem(it){if(!it)return;const s=$('#itemSheet'),k=key(it),md=has3D(it)?MODELS[k]:null,im=it.img||it.sec.img;
+  s.innerHTML=`<div class="grab"></div><div class="s-sec">${esc(it.sec.title)}${it.sec.size?' · <span class="en">'+esc(it.sec.size)+'</span>':''}</div>
+   <div class="s-top"><div style="flex:1"><div class="s-nm">${esc(it.nm)}</div><div class="s-en en">${esc(it.en)}</div></div>${md&&md.photo?`<img class="photo" src="assets/img/${md.photo}-sq.jpg" alt="">`:im?`<img src="assets/img/${im}.webp" alt="">`:''}</div>
+   ${it.d?`<div class="s-d">${esc(it.d)}<small class="en">${esc(it.d_en)}</small></div>`:''}${it.note?`<div class="s-d">${esc(it.note)}</div>`:''}
+   ${it.nut?`<div class="chips">${it.nut.split('·').map(x=>`<span>${esc(x.trim())}</span>`).join('')}</div>`:''}
+   <div class="s-row"><div class="s-pr">${it.p} <span class="cur">SR</span></div><div class="s-acts">${md?'<button class="btn line en" id="v3B">3D</button>':''}<button class="btn terra" id="addB">أضف إلى الطلب</button></div></div>`;
+  s.querySelector('#addB').onclick=()=>{if(wantsOpts(it)){openOpts(it);return}add(k);scrim.click()};if(md)s.querySelector('#v3B').onclick=()=>{scrim.click();open3D(it)};openSheet(s)}
+function openCart(){const s=$('#cartSheet'),ks=Object.keys(cart).filter(k=>cart[k]>0&&byKey(k));let total=0;
+  const rows=ks.map(k=>{const it=byKey(k),p=priceOf(k)*cart[k];total+=p;const o=optsOf(k);return `<div class="c-row"><div class="n">${esc(it.nm)}<small>${esc(o.length?o.join(' · '):it.sec.title)}</small></div>
+   <div class="q"><button data-m="${esc(k)}">−</button><b>${cart[k]}</b><button data-p="${esc(k)}">+</button></div><div class="p">${p} SR</div></div>`}).join('');
+  s.innerHTML=`<div class="grab"></div><div class="c-h">طلبي</div>${ks.length?rows+`<div class="c-total"><span>المجموع</span><span class="en">${total} SR</span></div>
+   <p class="c-note">اعرض الطلب على الكاشير</p>`:`<div class="empty">لم تُضف أي صنف بعد.<br>اضغط على أي صنف في القائمة لإضافته.</div>`}`;
+  s.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>{cart[b.dataset.p]++;save();badge();openCart()});
+  s.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{if(--cart[b.dataset.m]<=0)delete cart[b.dataset.m];save();badge();openCart()});
+  openSheet(s)}
+$('#cartBtn').onclick=openCart;
+function openJump(){const s=$('#jumpSheet');s.innerHTML=`<div class="grab"></div><div class="c-h">الأقسام</div><div class="ixg ixs">${M.sections.map((x,i)=>ixTile(x,i,'data-j',cur===i+1?'cur':'sm')).join('')}</div>`;ixStills(s);
+  s.querySelectorAll('[data-j]').forEach(a=>a.onclick=()=>{scrim.click();setTimeout(()=>go(+a.dataset.j),250)});openSheet(s)}
+$('#lbl').onclick=()=>{if(pages[cur].key!=='close')openJump()};
+
+/* keep the frame fixed even if a focused control tries to scroll it into view */
+const appEl=document.querySelector('.app');appEl.addEventListener('scroll',()=>{appEl.scrollTop=0;appEl.scrollLeft=0});
+document.addEventListener('focusin',()=>{appEl.scrollTop=0;window.scrollTo(0,0)});
+
+/* ---------- 3D viewer ---------- */
+let mv=null,modelsMod=null,vid=0;
+function loadMV(){return customElements.get('model-viewer')?Promise.resolve():new Promise((res,rej)=>{const sc=document.createElement('script');sc.type='module';
+  sc.src='https://cdn.jsdelivr.net/npm/@google/model-viewer@4.0.0/dist/model-viewer.min.js';sc.onerror=rej;document.head.appendChild(sc);customElements.whenDefined('model-viewer').then(res)})}
+async function open3D(it){const md=MODELS[key(it)],id=++vid;$('#vSec').textContent=it.sec.title;$('#vNm').textContent=it.nm;$('#vEn').textContent=it.en;
+  $('#vLd').classList.remove('hide');$('#arOff').style.display='none';$('#viewer').classList.add('show');
+  try{await loadMV();modelsMod=modelsMod||await import('./models.js?v=20261110g');
+    if(!mv){mv=document.createElement('model-viewer');['camera-controls','auto-rotate','ar'].forEach(a=>mv.setAttribute(a,''));
+      Object.entries({'touch-action':'pan-y','auto-rotate-delay':'0','rotation-per-second':'30deg','shadow-intensity':'1','shadow-softness':'1','exposure':'1',
+        'tone-mapping':'neutral','environment-image':'https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/studio_small_09_1k.hdr','ar-modes':'webxr quick-look','ar-scale':'fixed','ar-placement':'floor','interaction-prompt':'none','field-of-view':'26deg'}).forEach(([a,v])=>mv.setAttribute(a,v));
+      mv.innerHTML='<button slot="ar-button" class="ar-btn" style="position:absolute;bottom:4px;left:50%;transform:translateX(-50%)"><svg viewBox="0 0 24 24"><path d="M12 3 4 7.5v9L12 21l8-4.5v-9z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></svg>شاهده على طاولتك</button>';
+      mv.addEventListener('error',e=>{if(mv.environmentImage!=='neutral'){mv.environmentImage='neutral'}});
+      mv.addEventListener('load',()=>{$('#vLd').classList.add('hide');setTimeout(()=>{if(!mv.canActivateAR)$('#arOff').style.display='block'},300)});
+      $('#stage').appendChild(mv)}
+    const url=await modelsMod.glb(md.m);if(id!==vid)return;
+    mv.cameraOrbit=md.o;mv.cameraTarget=`0m ${(md.h/2).toFixed(3)}m 0m`;mv.src=url;if(mv.loaded&&mv.src===url)$('#vLd').classList.add('hide');
+  }catch(e){console.error(e);$('#vLd').innerHTML='<div>تعذّر تحميل المجسّم</div>'}}
+$('#vx').onclick=()=>$('#viewer').classList.remove('show');
+
+
+/* ---------- product strip: drag/snap with spring easing, stills for neighbours, one live turntable in the centre ---------- */
+let M3D=null;const getM3D=async()=>M3D=M3D||await import('./models.js?v=20261110g');
+const PHI=m=>/^(espresso|turkish|latte|spanishLatte|cappuccino|americano|flatWhite|cortado|dripCoffee|hotTea|hotMatcha)$/.test(m)?50:80;
+const SNAP={};
+function czInit(pg){if(pg.cz){czLayout(pg,pg.cz.pos,false);return}const sid=pages[els.indexOf(pg)].key,s=M.sections.find(x=>x.id===sid),its=czItems(s);
+  const st=pg.querySelector('.cz'),figs=[...st.querySelectorAll('.sb-it')],cv=st.querySelector('.sb-live');
+  const c=pg.cz={s,its,st,figs,cv,pos:0,act:-1,view:null};
+  // pointer drag (RTL: dragging to the right brings the next item)
+  let d=null;st.addEventListener('pointerdown',e=>{d={x:e.clientX,y:e.clientY,p:c.pos,t:performance.now(),moved:false}});
+  addEventListener('pointermove',e=>{if(!d)return;const dx=e.clientX-d.x;if(!d.moved&&Math.abs(dx)<6)return;d.moved=true;czLayout(pg,Math.max(-.35,Math.min(its.length-.65,d.p+dx/(st.clientWidth*.56))),true)});
+  addEventListener('pointerup',e=>{if(!d)return;const dx=e.clientX-d.x,v=dx/Math.max(1,performance.now()-d.t);let tgt=Math.round(c.pos);
+    if(d.moved&&Math.abs(v)>.35)tgt=Math.round(d.p)+(v>0?1:-1);if(!d.moved){d=null;return czTap(pg,e)}d=null;czGo(pg,tgt)});
+  pg.querySelectorAll('.sb-dots i').forEach(i=>i.onclick=()=>czGo(pg,+i.dataset.d));
+  czLayout(pg,0,false);czActivate(pg,0);czPreload(pg)}
+function czTap(pg,e){const c=pg.cz,r=c.st.getBoundingClientRect(),x=e.clientX-r.left;if(x<r.width*.24)return czGo(pg,c.act+1);if(x>r.width*.76)return czGo(pg,c.act-1);
+  const it=c.its[c.act];if(it&&has3D(it))open3D(it)}
+function czGo(pg,i){const c=pg.cz;i=Math.max(0,Math.min(c.its.length-1,i));czLayout(pg,i,false);if(i!==c.act)czActivate(pg,i)}
+function czLayout(pg,pos,dragging){const c=pg.cz;c.pos=pos;const W=c.st.clientWidth;
+  c.figs.forEach((f,i)=>{const o=i-pos,a=Math.abs(o);f.style.transition=dragging?'none':'transform .55s cubic-bezier(.22,.8,.26,1),opacity .55s';
+    if(a>2.6){f.style.opacity=0;f.style.visibility='hidden';return}f.style.visibility='';
+    const x=-o*W*.56,sc=1-Math.min(a,1)*.38-Math.max(0,a-1)*.12,y=-Math.min(a,1)*W*.04;f.style.transform=`translate(calc(-50% + ${(x).toFixed(1)}px),calc(-50% + ${y.toFixed(1)}px)) scale(${sc.toFixed(3)})`;f.style.filter=a>.3?`blur(${Math.min(a,1)*2.2}px)`:'none';
+    f.style.opacity=(a<.5&&c.view&&c.liveOn)?0:(1-Math.min(a,2)*.3).toFixed(2)});
+  if(dragging&&c.view){c.view.hide();c.liveOn=false;c.figs.forEach((f,i)=>{if(Math.abs(i-pos)<.5)f.style.opacity=1})}}
+async function czSnap(pg,i){const c=pg.cz,it=c.its[i],md=MODELS[key(it)],f=c.figs[i],img=f.querySelector('img');if(img.src||f.classList.contains('fb'))return;const pic=picOf(it);
+  if(pic){img.classList.add('ph');if(pic.startsWith('food/'))img.classList.add('food');img.onload=()=>{img.classList.add('ok');const l=f.querySelector('.ld');if(l)l.remove()};img.src='assets/'+pic+'.webp?v=26';return}
+  if(!md){f.classList.add('fb');const l=f.querySelector('.ld');if(l)l.remove();return}const k=md.m;
+  try{const m=await getM3D();SNAP[k]=SNAP[k]||m.still(k,{w:520,h:680,phi:PHI(k)});const url=await SNAP[k];img.onload=()=>{img.classList.add('ok');const l=f.querySelector('.ld');if(l)l.remove()};img.src=url}catch(e){console.error(e)}}
+async function czPreload(pg){const c=pg.cz;const order=[...c.its.keys()].sort((a,b)=>Math.abs(a-c.act)-Math.abs(b-c.act));for(const i of order)await czSnap(pg,i)}
+async function czActivate(pg,i){const c=pg.cz,it=c.its[i],md=MODELS[key(it)];c.act=i;pg.style.setProperty('--sbc',bgOf(it));
+  pg.querySelectorAll('.sb-dots i').forEach((d,j)=>d.classList.toggle('on',j===i));
+  const k=key(it),ds=descOf(it),sz=c.s.size||'';pg.querySelector('.sb-body').innerHTML=`<div class="sb-txt"><div class="sb-head"><div class="sb-p">${it.p}<small>SR</small></div>${sz?`<span class="sb-size en">${esc(sz)}</span>`:''}</div>
+    <div class="sb-n">${esc(it.nm)}</div><div class="sb-e en">${esc(it.en)}</div><div class="sb-d">${esc(ds)}</div>${descEnOf(it)?`<div class="sb-de en">${esc(descEnOf(it))}</div>`:''}${it.nut?`<div class="sb-meta en">${esc(it.nut)}</div>`:''}
+    <div class="sb-get"><button class="add">أضف لطلبي</button></div></div>`;
+  pg.querySelector('.sb-body .add').onclick=()=>wantsOpts(it)?openOpts(it):add(k);const v=pg.querySelector('.sb-body .v3');if(v)v.onclick=()=>open3D(it);
+  const card=pg.querySelector('.sb-card');card.classList.add('bump');requestAnimationFrame(()=>requestAnimationFrame(()=>card.classList.remove('bump')));
+  await czSnap(pg,i);if(c.act!==i||!md)return;}
+
+
+/* ---------- search ---------- */
+function renderS(f=''){f=f.trim().toLowerCase();
+  const html=M.sections.map(s=>{const its=s.groups.flatMap(g=>g.items).filter(i=>!f||i.nm.includes(f)||String(i.en).toLowerCase().includes(f));
+    return its.length?`<div class="g">${esc(s.title)}</div>`+its.map(i=>`<div class="r" data-k="${esc(key(i))}"><span>${esc(i.nm)}</span><span class="p">${i.p} SR</span><button class="a" data-a="${esc(key(i))}">+</button></div>`).join(''):''}).join('');
+  $('#sl').innerHTML=html||'<div class="empty">لا توجد نتائج</div>'}
+$('#sl').addEventListener('click',e=>{const a=e.target.closest('[data-a]');if(a){const it=byKey(a.dataset.a);return wantsOpts(it)?openOpts(it):add(a.dataset.a)}const r=e.target.closest('[data-k]');if(r)openItem(byKey(r.dataset.k))});
+$('#find').onclick=()=>{$('#q').value='';renderS();$('#search').classList.add('show')};
+$('#qx').onclick=()=>$('#search').classList.remove('show');
+$('#q').oninput=e=>renderS(e.target.value);
+</script>
+</body>
+</html>
