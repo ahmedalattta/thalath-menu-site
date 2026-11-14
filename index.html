@@ -245,6 +245,18 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .close .web{margin-top:30px;background:var(--paper);color:var(--ink);font-size:12px;font-weight:500;border-radius:999px;padding:8px 44px;text-decoration:none}
 
 /* ---------- bottom bar ---------- */
+/* section switcher bubble */
+.sw{flex:1;min-width:0;display:flex;align-items:center;gap:4px;height:50px;padding:4px;border-radius:999px;background:#fff;box-shadow:0 8px 22px rgba(36,19,13,.16),inset 0 0 0 1px rgba(36,19,13,.05)}
+.bar.on-dark .sw{background:rgba(255,255,255,.1);box-shadow:inset 0 0 0 1px rgba(255,255,255,.2)}
+.sw .nb{width:42px;height:42px;border:0;background:var(--ink);color:var(--paper);transition:transform .15s,opacity .2s}
+.sw .nb:active{transform:scale(.9)}
+.bar.on-dark .sw .nb{background:var(--paper);color:var(--ink)}
+.sw .nb:disabled{opacity:.18}
+.sw .lbl{padding:0 4px}
+.sw .lbl.pop{animation:lblpop .35s cubic-bezier(.2,.9,.3,1.3)}
+@keyframes lblpop{0%{transform:translateY(6px);opacity:0}100%{transform:none;opacity:1}}
+.bar>.nb{border:1px solid var(--line)}
+
 .bar{position:absolute;bottom:0;inset-inline:0;z-index:40;display:flex;align-items:center;gap:8px;padding:10px 12px calc(12px + var(--sb));
   background:linear-gradient(to top,var(--paper) 62%,rgba(220,216,216,0));transition:background .3s}
 .bar.on-dark{background:linear-gradient(to top,var(--ink) 62%,rgba(59,31,21,0));color:var(--paper)}
@@ -349,9 +361,11 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   <div class="book" id="book"></div>
 
   <div class="bar" id="bar">
-    <button class="nb" id="prev" aria-label="السابق"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button>
-    <button class="lbl" id="lbl" aria-label="الأقسام"></button>
-    <button class="nb" id="next" aria-label="التالي"><svg viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></svg></button>
+    <div class="sw" id="sw">
+      <button class="nb" id="prev" aria-label="القسم السابق"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button>
+      <button class="lbl" id="lbl" aria-label="الأقسام"></button>
+      <button class="nb" id="next" aria-label="القسم التالي"><svg viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></svg></button>
+    </div>
     <button class="nb" id="find" aria-label="بحث"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></svg></button>
     <button class="cart-btn" id="cartBtn">طلبي<span class="badge" id="badge">0</span></button>
   </div>
@@ -766,6 +780,7 @@ const els=[...book.children];
 let cur=0,busy=false;
 function ui(){const p=pages[cur],s=M.sections[cur-1];
   $('#lbl').innerHTML=p.key==='close'?'':`<b>${esc(p.label)}</b>${s?`<span class="en">${s.no}</span> · `:''}${cur+1}/${pages.length}`;
+  {const l=$('#lbl');l.classList.remove('pop');void l.offsetWidth;l.classList.add('pop')}
   $('#prev').disabled=cur===0;$('#next').disabled=cur===pages.length-1;$('#bar').classList.toggle('on-dark',!!p.dark);
   try{history.replaceState(null,'','#'+p.key)}catch(e){}}
 function show(i){els.forEach(e=>e.classList.remove('on','under','revealed'));els[i].classList.add('on');els[i].querySelector('.scroll').scrollTop=0;if(els[i].querySelector('.cz'))czInit(els[i]);if(els[i].querySelector('.ixg'))ixStills(els[i]);
