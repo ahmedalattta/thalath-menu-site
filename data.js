@@ -707,9 +707,9 @@ window.MENU={
 {
 "items": [
 {
-"nm": "كوكيز شوفان وهيل",
+"nm": "كوكيز هيل وشوفان",
 "p": 12,
-"en": "OAT & CARDAMOM COOKIE"
+"en": "CARDAMOM & OAT COOKIE"
 },
 {
 "nm": "كعك تمر",
