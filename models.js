@@ -294,6 +294,7 @@ async function hotCup(size,surf){const c=PC[size],g=await paperCup(c),y=c.h-.000
   if(!glossy){const col=new THREE.Mesh(new THREE.TorusGeometry(r-.0002,.0009,12,128),new THREE.MeshPhysicalMaterial({color:surf==='crema'?0xd9a466:surf==='matcha'?0xd3e2a6:0xfbf6ee,roughness:.7,sheen:.4,sheenColor:0xffffff,normalMap:foamNormal(),normalScale:new THREE.Vector2(.4,.4)}));
     col.rotation.x=Math.PI/2;col.position.y=y+.0006;g.add(col)}
   return g}
+
 Object.assign(BUILD,{
  espresso(){return hotCup('S','crema')},
  latte(){return hotCup('L','latte')},
