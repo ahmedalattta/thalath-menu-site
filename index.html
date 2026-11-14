@@ -117,6 +117,17 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .ev:nth-child(odd){background:var(--sage)}
 .ev h4{font-size:21px;font-weight:500;line-height:1.3}
 .ev p{font-size:13px;font-weight:500}
+.evg{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.evc{display:flex;flex-direction:column;background:#fff;border-radius:14px;overflow:hidden;color:inherit;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.evc img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:#eee}
+.evb{padding:9px 10px 11px;display:flex;flex-direction:column;gap:4px;flex:1}
+.evb h4{font-size:14.5px;font-weight:600;line-height:1.3}
+.evb p{font-size:11px;font-weight:500;opacity:.75;line-height:1.4}
+.evb .bk{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:4px;background:var(--ink);color:var(--paper);font-size:11.5px;font-weight:500;padding:6px 11px;border-radius:999px}
+.evb .bk svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2.2}
+.evc.nt .ph{aspect-ratio:4/5;padding:10px;background:var(--sage);display:grid;place-items:center;text-align:center;font-size:30px;font-weight:600;color:var(--ink)}.evc.nt .ph small{display:block;font-size:11px;font-weight:500;opacity:.7;margin-top:6px}
+
+.evb .soon{margin-top:6px;font-size:11px;opacity:.7}
 .ev-foot{display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-size:13px;font-weight:500}
 .ev-foot .en{font-size:11px}
 
@@ -722,7 +733,7 @@ function sectionHTML(s){n=0;if(CZ.includes(s.id))return czHTML(s);
    <div class="rule"></div><div class="feature" data-k="${esc('signature|'+f.nm)}"><div class="l">${esc(f.label)}</div><div class="n">${esc(f.nm)}</div><div class="ph2"><div class="p">${f.p} <small>ر.س</small></div><img src="assets/img/caramel-chapter-sq.jpg" alt=""></div></div>
    <div class="handle en">${esc(M.cover.handle)}</div></div>`}
   if(s.id==='events')return `<div class="scroll">${hdr(s)}<div class="hero"><div class="t"><h2>${esc(s.title)}</h2><div class="sub en">${esc(s.en)}</div></div></div>
-   <div class="rule"></div><div class="month">${esc(s.month)}</div>${s.events.map(e=>`<div class="ev"><h4>${esc(e[0])}</h4><p>${esc(e[1])}</p></div>`).join('')}
+   <div class="rule"></div><div class="month">${esc(s.month)}</div><div class="evg">${s.events.map(e=>e[2]?`<a class="evc" href="${encodeURI(e[3])}" target="_blank" rel="noopener"><img src="assets/events/${e[2]}.webp?v=1" alt="${esc(e[0])}" loading="lazy"><div class="evb"><h4>${esc(e[0])}</h4><p>${esc(e[1])}</p><span class="bk">احجز مقعدك <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div></a>`:`<div class="evc nt"><div class="ph"><div>ثلاث<small>تفاصيل الفعالية قريبًا</small></div></div><div class="evb"><h4>${esc(e[0])}</h4><p>${esc(e[1])}</p><span class="soon">الحجز قريبًا</span></div></div>`).join('')}</div>
    <div class="ev-foot"><span>${esc(s.footer[0])}</span><span class="en">${esc(s.footer[1])}</span></div><div class="handle en">${esc(M.cover.handle)}</div></div>`;
   const inkSub=['hot','iced','matcha'].includes(s.id);
   return `<div class="scroll">${hdr(s)}
